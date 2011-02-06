@@ -1,0 +1,27 @@
+%h1 Register
+
+= form_for user do |f|
+  - if user.errors.any?
+    .error_messages
+      %h2 Please correct the following errors
+      %ul
+        - for message in user.errors.full_messages
+          %li= message
+  %div
+    = label_tag :email
+    %br
+    = f.text_field :email
+  %div
+    = label_tag :email_confirmation
+    %br
+    = f.text_field :email_confirmation
+  %div
+    = label_tag :password
+    %br
+    = f.password_field :password
+  %div
+    = label_tag :password_confirmation
+    %br
+    = f.password_field :password_confirmation
+  %div
+    = f.submit "Save"
