@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-gem 'pg'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'decent_exposure'
 gem 'haml'
 gem 'haml-rails'
+gem 'pg'
+gem 'rails', '3.0.3'
 
 group :development, :test do
   gem 'capybara'
