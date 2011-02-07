@@ -5,7 +5,7 @@ gem 'decent_exposure'
 gem 'haml'
 gem 'haml-rails'
 gem 'pg'
-gem 'rails', '3.0.3'
+gem 'rails'
 
 group :development, :test do
   gem 'capybara'
