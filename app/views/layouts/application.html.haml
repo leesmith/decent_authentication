@@ -5,16 +5,15 @@
     %meta(http-equiv='Content-Script-Type' content='text/javascript')
     = csrf_meta_tag
     %title Decent Authentication
+    = stylesheet_link_tag 'global'
   %body
     %div#nav
       - if current_user
-        %p
-          Signed in as #{current_user.email}
-          |
-          = link_to 'Sign out', sign_out_path
+        Signed in as #{current_user.email}
+        |
+        = link_to 'Sign out', sign_out_path
       - else
-        %p
-          = link_to 'Register', register_path
-          or
-          = link_to 'Sign in', sign_in_path
+        = link_to 'Register', register_path
+        or
+        = link_to 'Sign in', sign_in_path
   = yield

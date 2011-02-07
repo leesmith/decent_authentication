@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def require_authentication
+    unless current_user
+      redirect_to sign_in_path, :alert => 'You must be authenticated to access this page!'
+    end
+  end
+
 end

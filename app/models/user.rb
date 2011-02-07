@@ -10,10 +10,10 @@ class User < ActiveRecord::Base
   # Validations
   validates_presence_of :email
   validates_presence_of :password, :on => :create
-  validates_confirmation_of :password, :email
-  validates_presence_of :password_confirmation, :email_confirmation
+  validates_confirmation_of :email, :password
+  validates_presence_of :email_confirmation, :password_confirmation
   validates_uniqueness_of :email
-  validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  validates_format_of :email, :with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, :allow_blank => true
 
   def self.authenticate(email, password)
     user = find_by_email(email)

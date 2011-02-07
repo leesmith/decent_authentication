@@ -1,0 +1,9 @@
+#flash-notice, #flash-alert {
+  color: #585;
+  font-weight: bold;
+  margin: 0;
+  padding: 3px 0;
+}
+#flash-alert {
+  color: #c00;
+}
