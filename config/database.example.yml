@@ -1,0 +1,22 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+  min_messages: warning
+
+production:
+  database: decent_authentication_production
+  <<: *common
+
+development:
+  database: decent_authentication_development
+  <<: *common
+
+test: &test
+  database: decent_authentication_test
+  <<: *common
+
+cucumber:
+  <<: *test
