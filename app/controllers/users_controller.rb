@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def create
     if user.save
-      redirect_to root_path
+      redirect_to sign_in_path, :notice => t(:registration)
     else
       render 'new'
     end

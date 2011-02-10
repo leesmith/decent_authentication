@@ -7,19 +7,19 @@
         - for message in user.errors.full_messages
           %li= message
   %div
-    = label_tag :email
+    = f.label :email
     %br
     = f.text_field :email
   %div
-    = label_tag :email_confirmation
+    = f.label :email_confirmation
     %br
     = f.text_field :email_confirmation
   %div
-    = label_tag :password
+    = f.label :password
     %br
     = f.password_field :password
   %div
-    = label_tag :password_confirmation
+    = f.label :password_confirmation
     %br
     = f.password_field :password_confirmation
   %div
