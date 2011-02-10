@@ -1,9 +1,8 @@
-%h1 Register
+%h1= t(:register)
 
 = form_for user do |f|
   - if user.errors.any?
     .error_messages
-      %h2 Please correct the following errors
       %ul
         - for message in user.errors.full_messages
           %li= message
@@ -24,4 +23,4 @@
     %br
     = f.password_field :password_confirmation
   %div
-    = f.submit "Save"
+    = f.submit t(:save)

@@ -2,4 +2,12 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  decent_authentication: "Decent Authentication"
+  invalid_sign_in: "Invalid sign in attempt!"
+  register: "Register"
+  save: "Save"
+  sign_in: "Sign in"
+  sign_out: "Sign out"
+  signed_in_as: "Signed in as"
+  successful_sign_out: "Successfully signed out!"
+  welcome: "Welcome"

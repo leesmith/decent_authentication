@@ -1,4 +1,4 @@
-%h1 Sign In
+%h1= t(:sign_in)
 
 - flash.each do |name, msg|
   = content_tag :div, msg, :id => "flash-#{name}"
@@ -13,4 +13,4 @@
     %br
     = password_field_tag :password
   %div
-    = submit_tag "Sign in"
+    = submit_tag t(:sign_in)

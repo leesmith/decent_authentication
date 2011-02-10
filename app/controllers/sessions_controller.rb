@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash.now.alert = 'Invalid sign in attempt!'
+      flash.now.alert = t(:invalid_sign_in)
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to sign_in_path, :notice => 'Successfully signed out!'
+    redirect_to sign_in_path, :notice => t(:successful_sign_out)
   end
 
 end

@@ -4,16 +4,15 @@
     %meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
     %meta(http-equiv='Content-Script-Type' content='text/javascript')
     = csrf_meta_tag
-    %title Decent Authentication
+    %title= t(:decent_authentication)
     = stylesheet_link_tag 'global'
   %body
     %div#nav
       - if current_user
-        Signed in as #{current_user.email}
+        = "#{t(:signed_in_as)} #{current_user.email}"
         |
-        = link_to 'Sign out', sign_out_path
+        = link_to t(:sign_out), sign_out_path
       - else
-        = link_to 'Register', register_path
-        or
-        = link_to 'Sign in', sign_in_path
+        = link_to t(:register), register_path
+        = link_to t(:sign_in), sign_in_path
     = yield
