@@ -12,7 +12,6 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'ruby-debug19'
