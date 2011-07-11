@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'decent_exposure'
 gem 'haml-rails'
 gem 'pg'
@@ -13,7 +13,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'ruby-debug19'
+  gem 'ruby-debug19', require: 'ruby-debug'
   gem 'shoulda'
   gem 'spork'
 end
