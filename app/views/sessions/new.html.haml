@@ -3,7 +3,7 @@
 
 = form_tag [:sessions], id: 'new_session' do
   - flash.each do |name, msg|
-    = content_tag :div, msg, :id => "flash-#{name}"
+    = content_tag :div, msg, id: "flash-#{name}"
   %div
     = label_tag :email
     = text_field_tag :email, params[:email]
