@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'decent_exposure'
-gem 'haml-rails'
+gem 'haml'
 gem 'pg'
 gem 'rails'
 
