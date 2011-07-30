@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_authentication
     unless current_user
-      redirect_to sign_in_path, :alert => 'You must be authenticated to access this page!'
+      redirect_to sign_in_path, alert: t(:not_authenticated)
     end
   end
 

@@ -19,4 +19,4 @@ Feature: User session is remembered
     Then I should be on the home page
     When I close my browser
     And I go to the home page
-    Then I should see "You must be authenticated"
+    Then I should see "Please sign in before continuing"

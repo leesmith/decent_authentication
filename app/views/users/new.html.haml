@@ -8,19 +8,15 @@
           %li= message
   %div
     = f.label :email
-    %br
     = f.text_field :email
   %div
     = f.label :email_confirmation
-    %br
     = f.text_field :email_confirmation
   %div
     = f.label :password
-    %br
     = f.password_field :password
   %div
     = f.label :password_confirmation
-    %br
     = f.password_field :password_confirmation
   %div
-    = f.submit t(:save)
+    = f.submit t(:save), class: 'button'

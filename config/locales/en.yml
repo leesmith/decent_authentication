@@ -4,6 +4,7 @@
 en:
   decent_authentication: "Decent Authentication"
   invalid_sign_in: "Invalid sign in attempt!"
+  not_authenticated: "Please sign in before continuing!"
   register: "Register"
   registration: "Registration successful!"
   save: "Save"
@@ -11,4 +12,4 @@ en:
   sign_out: "Sign out"
   signed_in_as: "Signed in as"
   successful_sign_out: "Successfully signed out!"
-  welcome: "Welcome"
+  welcome: "Welcome to the machine. You have successfully authenticated."
