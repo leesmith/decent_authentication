@@ -1,5 +1,5 @@
 Given 'I am signed in' do
-  @me = Factory(:user)
+  @me = Fabricate(:user)
   When %(I go to the sign in page)
   When %(I fill in "Email" with "#{@me.email}")
   When %(I fill in "Password" with "#{@me.password}")
@@ -7,7 +7,7 @@ Given 'I am signed in' do
 end
 
 Given 'I am signed in with the remember me option' do
-  @me = Factory(:user)
+  @me = Fabricate(:user)
   When %(I go to the sign in page)
   When %(I fill in "Email" with "#{@me.email}")
   When %(I fill in "Password" with "#{@me.password}")

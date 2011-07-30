@@ -10,7 +10,7 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'fabrication'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'ruby-debug19', require: 'ruby-debug'

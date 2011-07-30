@@ -58,10 +58,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (2.0.2)
-    factory_girl_rails (1.1.0)
-      factory_girl (~> 2.0.0)
-      railties (>= 3.0.0)
+    fabrication (1.0.1)
     ffi (1.0.9)
     gherkin (2.4.5)
       json (>= 1.4.6)
@@ -152,7 +149,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   decent_exposure
-  factory_girl_rails
+  fabrication
   haml
   launchy
   pg

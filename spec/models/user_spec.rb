@@ -36,7 +36,7 @@ describe User do
 
   context "should authenticate valid credentials" do
     before do
-      @user = Factory(:user)
+      @user = Fabricate(:user)
     end
     it { User.authenticate(@user.email, @user.password).should be }
   end
