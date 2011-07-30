@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110204223748) do
+ActiveRecord::Schema.define(:version => 20110713223813) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110204223748) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "auth_token"
   end
 
 end

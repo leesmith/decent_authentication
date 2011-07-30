@@ -28,3 +28,4 @@ Feature: User signs in
   Scenario: valid sign in attempt
     Given I am signed in
     Then I should see "Sign out"
+    And I should be on the home page
