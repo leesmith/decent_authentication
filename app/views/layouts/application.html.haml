@@ -1,18 +1,19 @@
 !!!
-%html{html_attrs(I18n.locale)}
+%html{lang: I18n.locale}
   %head
-    %meta(http-equiv='Content-Type' content='text/html;charset=utf-8')
-    %meta(http-equiv='Content-Script-Type' content='text/javascript')
+    %meta{charset: 'utf-8'}
+    = stylesheet_link_tag 'application'
     = csrf_meta_tag
     %title= t(:decent_authentication)
-    = stylesheet_link_tag 'global'
   %body
-    %div#nav
-      - if current_user
-        = "#{t(:signed_in_as)} #{current_user.email}"
-        |
-        = link_to t(:sign_out), sign_out_path
-      - else
-        = link_to t(:register), register_path
-        = link_to t(:sign_in), sign_in_path
-    = yield
+    %header
+      %nav
+        - if current_user
+          = "#{t(:signed_in_as)} #{current_user.email}"
+          |
+          = link_to t(:sign_out), sign_out_path
+        - else
+          = link_to t(:register), register_path
+          = link_to t(:sign_in), sign_in_path
+    %section
+      = yield
