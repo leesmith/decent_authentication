@@ -34,17 +34,18 @@ body:before { content: ""; position: fixed; top: -10px; left: 0; width: 100%; he
 header, section { width: 550px; margin: 10px auto; }
 section { margin-top: 30px; }
 
+h1 { font-size: 28px; margin-bottom: 12px; font-weight: bold; text-align: center; text-shadow: 1px 1px 0 #fff; }
+strong { font-weight: bold; }
+
 nav { text-align: center; }
-nav a { color: #008ce5; text-decoration: none; }
-nav a:hover { border-bottom: 1px solid #008ce5; }
+nav a, form a { color: #008ce5; text-decoration: none; }
+nav a:hover, form a:hover { border-bottom: 1px solid #008ce5; }
 
-h1 { font-size: 24px; margin-bottom: 12px; font-weight: bold; text-align: center; }
-
-#new_session, #new_user, article { width: 265px; margin: 0 auto; background: #fff; padding: 12px; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.3); -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.3); -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
-
+form, article { width: 265px; margin: 0 auto; background: #fff; padding: 12px; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.3); -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.3); -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
 article { width: 550px; text-align: center; }
 
 label { display: block; }
+label:hover { cursor: pointer; }
 #remember-me { display: inline; }
 
 #email, #password, #user_email, #user_email_confirmation, #user_password, #user_password_confirmation { font-size: 14px; padding: 3px; width: 80%; }

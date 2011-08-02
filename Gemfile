@@ -10,6 +10,8 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'delorean'
+  gem 'email_spec'
   gem 'fabrication'
   gem 'launchy'
   gem 'rspec-rails'

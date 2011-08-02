@@ -42,6 +42,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.2.0)
       ffi (~> 1.0.6)
+    chronic (0.6.2)
     columnize (0.3.4)
     cucumber (1.0.2)
       builder (>= 2.1.2)
@@ -55,7 +56,12 @@ GEM
       nokogiri (>= 1.4.6)
     database_cleaner (0.6.7)
     decent_exposure (1.0.1)
+    delorean (1.1.0)
+      chronic
     diff-lcs (1.1.2)
+    email_spec (1.2.1)
+      mail (~> 2.2)
+      rspec (~> 2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fabrication (1.0.1)
@@ -149,6 +155,8 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   decent_exposure
+  delorean
+  email_spec
   fabrication
   haml
   launchy

@@ -10,6 +10,7 @@ DecentAuthentication::Application.routes.draw do
 
   # Resource routes
   resources :users
-  resources :sessions, except: [:show, :edit, :update]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :password_resets, except: [:index, :show, :destroy]
 
 end

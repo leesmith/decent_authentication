@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash.now.alert = t(:invalid_sign_in)
-      render 'new'
+      render :new
     end
   end
 
