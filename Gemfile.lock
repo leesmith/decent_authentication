@@ -64,6 +64,7 @@ GEM
       rspec (~> 2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    escape_utils (0.2.3)
     fabrication (1.0.1)
     ffi (1.0.9)
     gherkin (2.4.5)
@@ -157,6 +158,7 @@ DEPENDENCIES
   decent_exposure
   delorean
   email_spec
+  escape_utils
   fabrication
   haml
   launchy

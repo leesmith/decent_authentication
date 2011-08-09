@@ -11,6 +11,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'delorean'
+  gem 'escape_utils'
   gem 'email_spec'
   gem 'fabrication'
   gem 'launchy'
