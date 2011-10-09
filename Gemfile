@@ -4,7 +4,7 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'decent_exposure'
 gem 'haml'
 gem 'pg'
-gem 'rails'
+gem 'rails', '3.0.10'
 
 group :development, :test do
   gem 'capybara'
