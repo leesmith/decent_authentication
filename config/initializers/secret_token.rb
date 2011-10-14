@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-DecentAuthentication::Application.config.secret_token = '8b13f6255e9ea393fc7ab32327a76409cd64459fb0cb160daebde557a3d49653f681555d3afd8f2b402f8d0daa5d6f54391311419e2d2c44ed8dba18321baa7a'
+DecentAuthentication::Application.config.secret_token = 'c95f427fecc34d68a9ca3ecd3c46965f14ce56dab6f184d8e468f761ef377a37a8be3658a2e1704652a3c0444c34a6ded866808d44b7ce35770131573d7fc434'
