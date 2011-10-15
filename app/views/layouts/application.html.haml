@@ -1,0 +1,11 @@
+!!!
+%html{lang: I18n.locale}
+  %head
+    %meta{charset: 'utf-8'}
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+    %title= t(:decent_authentication)
+  %body
+    %section
+      = yield
