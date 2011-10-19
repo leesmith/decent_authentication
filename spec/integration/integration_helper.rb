@@ -5,9 +5,6 @@ require 'capybara/rspec'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
-  # capybara helpers are only enabled for groups with type of request
-  config.include Rails.application.routes.url_helpers, :type => :request
-
   config.use_transactional_fixtures = false
 
   config.before :each do
