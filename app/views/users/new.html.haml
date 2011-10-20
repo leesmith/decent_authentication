@@ -1,10 +1,12 @@
 %h1= t(:register)
 
 = form_for user do |f|
+  - flash.each do |name, msg|
+    = content_tag :div, msg, id: "flash-#{name}"
   - if user.errors.any?
     .error_messages
       %ul
-        - for message in user.errors.full_messages
+        - for message in filtered_user_messages(user)
           %li= message
   %div
     = f.label :email
