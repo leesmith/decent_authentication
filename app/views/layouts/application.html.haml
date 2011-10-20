@@ -9,3 +9,11 @@
   %body
     %section
       = yield
+    %header
+      %nav
+        - if authenticated_user
+          = "#{t(:signed_in_as)} #{authenticated_user.email}"
+        - else
+          = link_to t(:register), register_path
+          |
+          = link_to t(:sign_in), sign_in_path

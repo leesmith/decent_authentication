@@ -1,8 +1,6 @@
 %h1= t(:register)
 
 = form_for user do |f|
-  - flash.each do |name, msg|
-    = content_tag :div, msg, id: "flash-#{name}"
   - if user.errors.any?
     .error_messages
       %ul

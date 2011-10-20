@@ -1,0 +1,13 @@
+%h1= t(:sign_in)
+
+= form_tag [:sessions] do
+  - flash.each do |name, msg|
+    = content_tag :div, msg, id: "flash-#{name}"
+  %div
+    = label_tag :email
+    = text_field_tag :email, params[:email]
+  %div
+    = label_tag :password
+    = password_field_tag :password
+  %div
+    = submit_tag t(:sign_in), class: 'button'
