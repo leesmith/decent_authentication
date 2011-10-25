@@ -8,7 +8,8 @@
     %title= t(:decent_authentication)
   %body
     %section
-      = yield
+      %article
+        = yield
     %header
       %nav
         - if authenticated_user

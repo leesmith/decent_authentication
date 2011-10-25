@@ -12,7 +12,7 @@ en:
   sign_out: 'Sign out'
   signed_in_as: 'Signed in as'
   successful_sign_out: 'Successfully signed out!'
-  welcome: 'Welcome! You have successfully authenticated.'
+  welcome: 'You have successfully authenticated.'
   reset_password: 'Reset Password'
   change_password: 'Change Password'
   change_password_success: 'Your password was successfully changed!'

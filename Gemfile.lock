@@ -142,7 +142,6 @@ GEM
       json_pure
       rubyzip
     shoulda (2.11.3)
-    spork (0.8.5)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -179,6 +178,5 @@ DEPENDENCIES
   ruby-debug19
   sass-rails (~> 3.1.4)
   shoulda
-  spork
   turn
   uglifier (>= 1.0.3)

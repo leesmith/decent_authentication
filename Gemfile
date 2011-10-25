@@ -22,6 +22,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ruby-debug19', require: 'ruby-debug'
   gem 'shoulda'
-  gem 'spork'
   gem 'turn', :require => false
 end

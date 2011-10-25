@@ -10,4 +10,7 @@
     = label_tag :password
     = password_field_tag :password
   %div
+    = check_box_tag :remember_me, 1, params[:remember_me]
+    = label_tag :remember_me, 'Remember me', id: 'remember-me'
+  %div
     = submit_tag t(:sign_in), class: 'button'
