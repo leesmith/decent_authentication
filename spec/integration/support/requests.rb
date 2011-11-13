@@ -22,3 +22,7 @@ def delete_session_cookie
     existing_cookie.expires.nil?
   end
 end
+
+def let_password_token_expire
+  Delorean.time_travel_to 2.hours.from_now
+end

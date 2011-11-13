@@ -18,6 +18,8 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'delorean'
+  gem 'email_spec'
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'ruby-debug19', require: 'ruby-debug'

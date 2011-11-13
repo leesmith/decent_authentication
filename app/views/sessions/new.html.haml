@@ -13,4 +13,7 @@
     = check_box_tag :remember_me, 1, params[:remember_me]
     = label_tag :remember_me, 'Remember me', id: 'remember-me'
   %div
+    %strong Help:
+    = link_to 'Forgot password?', [:new, :password_reset]
+  %div
     = submit_tag t(:sign_in), class: 'button'

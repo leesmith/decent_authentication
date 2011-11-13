@@ -1,14 +1,11 @@
-%h1= t(:register)
+%h1= t(:change_password)
 
-= form_for user do |f|
+= form_for user, url: password_reset_path(params[:id]) do |f|
   - if user.errors.any?
     .error-messages
       %ul
-        - filtered_user_messages(user).each do |message|
+        - user.errors.full_messages.each do |message|
           %li= message
-  %div
-    = f.label :email
-    = f.text_field :email
   %div
     = f.label :password
     = f.password_field :password
@@ -16,4 +13,4 @@
     = f.label :password_confirmation
     = f.password_field :password_confirmation
   %div
-    = f.submit t(:register), class: 'button'
+    = f.submit t(:change_password), class: 'button'
