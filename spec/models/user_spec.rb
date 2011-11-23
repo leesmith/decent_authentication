@@ -7,9 +7,11 @@ describe User do
   it { should validate_presence_of :password_confirmation }
 
   context 'with an existing user' do
-    before { Fabricate(:user) }
+    before { Fabricate(:user, email: 'sam.adams@mail.com') }
     it do
       should validate_uniqueness_of :email
+      should_not allow_value('Sam.Adams@mail.com').for(:email)
+      should_not allow_value('saM.adaMs@mail.com').for(:email)
     end
   end
 
