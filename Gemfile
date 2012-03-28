@@ -15,14 +15,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
+group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'delorean'
   gem 'email_spec'
   gem 'fabrication'
-  gem 'rspec-rails'
-  gem 'ruby-debug19', require: 'ruby-debug'
   gem 'shoulda'
-  gem 'turn', :require => false
+end
+
+group :development do
+  gem 'ruby-debug19', require: 'ruby-debug'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end

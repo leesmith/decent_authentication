@@ -1,4 +1,5 @@
 = Decent Authentication
+{<img src="https://secure.travis-ci.org/leesmith/decent_authentication.png?branch=master" alt="Build Status" />}[http://travis-ci.org/leesmith/decent_authentication]
 
 <em>Authentication from scratch.</em>
 
