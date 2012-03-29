@@ -9,4 +9,4 @@ See the 'rails-3.0' tag for a legacy Rails 3.0 implementation.
 
     cp config/database.[mysql|postgres].yml config/database.yml
     gem install bundler && bundle
-    rake db:create db:setup
+    rake db:setup

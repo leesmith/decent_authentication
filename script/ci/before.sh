@@ -9,6 +9,5 @@ elif [ "$DB" = "mysql" ]; then
 fi
 
 # Set up database
-echo "Creating databases for $DB and loading schema"
-bundle exec rake db:create --trace
-bundle exec rake db:schema:load --trace
+echo "Setting up databases for $DB"
+bundle exec rake db:setup --trace
