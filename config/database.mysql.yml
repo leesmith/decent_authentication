@@ -1,0 +1,14 @@
+common: &common
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+
+development:
+  database: decent_authentication_development
+  <<: *common
+
+test: &test
+  database: decent_authentication_test
+  <<: *common

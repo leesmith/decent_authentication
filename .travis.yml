@@ -1,13 +1,13 @@
 language: ruby
 
-before_script:
-  - cp config/database.example.yml config/database.yml
-  - psql -c 'create database decent_authentication_test;' -U postgres
-  - bundle exec rake db:create db:migrate
+before_script: "./script/ci/before.sh"
 
 rvm:
   - 1.9.2
-  - 1.9.3
+
+env:
+  - DB=mysql
+  - DB=postgres
 
 notifications:
   email:
