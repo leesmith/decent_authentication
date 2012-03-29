@@ -2,7 +2,6 @@
 
 # Create a database.yml for the right database
 echo "Setting up database.yml for $DB"
-cp config/database.yml.example config/database.yml
 if [ "$DB" = "postgres" ]; then
   cp config/database.postgres.yml config/database.yml
 elif [ "$DB" = "mysql" ]; then
