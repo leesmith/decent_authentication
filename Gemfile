@@ -6,13 +6,13 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'mysql2' if ENV['DB'] == 'mysql'
 gem 'pg' if ENV['DB'].nil? || ENV['DB'] == 'postgres'
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.5'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -26,7 +26,7 @@ group :test do
 end
 
 group :development do
-  gem 'ruby-debug19', require: 'ruby-debug'
+  gem 'debugger'
 end
 
 group :development, :test do
