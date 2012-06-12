@@ -6,6 +6,8 @@ if [ "$DB" = "postgres" ]; then
   cp config/database.postgres.yml config/database.yml
 elif [ "$DB" = "mysql" ]; then
   cp config/database.mysql.yml config/database.yml
+else
+  cp config/database.sqlite.yml config/database.yml
 fi
 
 # Set up database

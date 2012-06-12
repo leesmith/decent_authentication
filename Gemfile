@@ -4,9 +4,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'decent_exposure'
 gem 'haml'
 gem 'jquery-rails'
-gem 'mysql2' if ENV['DB'] == 'mysql'
-gem 'pg' if ENV['DB'].nil? || ENV['DB'] == 'postgres'
 gem 'rails', '3.2.5'
+
+gem 'mysql2' if ENV['DB'] == 'mysql'
+gem 'pg' if ENV['DB'] == 'postgres'
+gem 'sqlite3' if ENV['DB'].nil?
 
 # Gems used only for assets and not required
 # in production environments by default.

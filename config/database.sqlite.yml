@@ -1,0 +1,11 @@
+development:
+  adapter: sqlite3
+  pool: 5
+  database: db/development.sqlite3
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  pool: 5
+  database: ":memory:"
+  timeout: 500
