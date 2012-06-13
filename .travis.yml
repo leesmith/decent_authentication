@@ -4,6 +4,7 @@ before_script: "./script/ci/before.sh"
 
 rvm:
   - 1.9.2
+  - 1.9.3
 
 env:
   - DB=mysql
