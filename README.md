@@ -10,3 +10,4 @@ See the 'rails-3.0' tag for a legacy Rails 3.0 implementation.
     cp config/database.sqlite.yml config/database.yml
     gem install bundler && bundle
     rake db:setup
+    rake
