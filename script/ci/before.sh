@@ -12,4 +12,4 @@ fi
 
 # Set up database
 echo "Setting up databases for $DB"
-bundle exec rake db:test:prepare --trace
+bundle exec rake db:create db:test:prepare --trace RAILS_ENV=test
