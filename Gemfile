@@ -24,6 +24,7 @@ group :test do
   gem 'delorean'
   gem 'email_spec'
   gem 'fabrication'
+  gem 'rake'
   gem 'shoulda'
 end
 
