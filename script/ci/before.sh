@@ -11,7 +11,3 @@ elif [ "$DB" = "mysql" ]; then
 else
   cp config/database.sqlite.yml config/database.yml
 fi
-
-# Set up database
-echo "Setting up databases for $DB"
-bundle exec rake db:test:prepare spec --trace RAILS_ENV=test
