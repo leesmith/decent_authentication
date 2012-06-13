@@ -11,7 +11,7 @@ env:
   - DB=sqlite
 
 script:
-  - RAILS_ENV=test bundle exec rake db:test:prepare spec --trace
+  - RAILS_ENV=test bundle exec rake db:migrate spec --trace
 
 notifications:
   email:
