@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, on: :create
   validates_presence_of :email, :password_confirmation
   validates_uniqueness_of :email, case_sensitive: false
-  validates_format_of :email, with: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, allow_blank: true
+  validates_format_of :email, with: /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i, allow_blank: true
 
   def generate_token(column)
     begin
