@@ -25,7 +25,7 @@ group :test do
   gem 'email_spec'
   gem 'fabrication'
   gem 'rake'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 group :development do
