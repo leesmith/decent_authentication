@@ -1,9 +1,7 @@
 require 'integration/integration_helper'
-include EmailSpec::Helpers
-include EmailSpec::Matchers
 
 describe 'User resets password' do
-  
+
   before :each do
     Fabricate(:user, email: 'sam.adams@mail.com')
     visit new_password_reset_path

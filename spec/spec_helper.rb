@@ -33,4 +33,8 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.include Delorean
+
+  # email_spec helpers
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
 end
