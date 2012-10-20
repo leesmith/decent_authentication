@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to sign_in_path, flash: { success: t(:registration) }
+      cookies[:auth_token] = @user.auth_token
+      redirect_to root_path, flash: { success: t(:thanks) }
     else
       render :new
     end

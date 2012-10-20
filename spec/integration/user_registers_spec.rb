@@ -30,7 +30,8 @@ describe 'User registration' do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Register'
-    page.should have_content('Registration was successful')
+    page.should have_content('Thanks for signing up')
+    current_path.should == root_path
   end
 
 end
