@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
 
   def require_authentication
     unless authenticated_user
-      redirect_to sign_in_path, alert: t(:not_authenticated)
+      redirect_to sign_in_path, flash: { error: t(:not_authenticated) }
     end
   end
+
 end

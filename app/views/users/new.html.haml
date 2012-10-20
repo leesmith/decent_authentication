@@ -1,10 +1,10 @@
 %h1= t(:register)
 
-= form_for user do |f|
-  - if user.errors.any?
+= form_for @user do |f|
+  - if @user.errors.any?
     .error-messages
       %ul
-        - filtered_user_messages(user).each do |message|
+        - filtered_user_messages(@user).each do |message|
           %li= message
   %div
     = f.label :email

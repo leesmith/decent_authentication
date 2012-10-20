@@ -1,10 +1,10 @@
 %h1= t(:change_password)
 
-= form_for user, url: password_reset_path(params[:id]) do |f|
-  - if user.errors.any?
+= form_for @user, url: password_reset_path(params[:id]) do |f|
+  - if @user.errors.any?
     .error-messages
       %ul
-        - user.errors.full_messages.each do |message|
+        - @user.errors.full_messages.each do |message|
           %li= message
   %div
     = f.label :password
