@@ -15,7 +15,7 @@
         - if authenticated_user
           = "#{t(:signed_in_as)} #{authenticated_user.email}"
           |
-          = link_to t(:sign_out), sign_out_path
+          = button_to t(:sign_out), sign_out_path, method: :delete, class: 'button-link'
         - else
           = link_to t(:register), register_path
           or

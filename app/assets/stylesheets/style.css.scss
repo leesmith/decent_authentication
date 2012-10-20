@@ -30,7 +30,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 body {
   color: #555;
   font: 14px/1.5em Helvetica, Arial, sans-serif;
-  background: #fff url(<%= asset_path 'bg.png' %>) repeat;
+  background: #fff url(image_path('bg.png')) repeat;
 }
 
 header, section {
@@ -51,6 +51,23 @@ h1 {
 
 strong {
   font-weight: bold;
+}
+
+form.button_to {
+  display: inline-block;
+}
+.button-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 1.0em;
+  text-decoration: none;
+  cursor: pointer;
+  color: #008ce5;
+}
+.button-link:hover {
+  text-decoration: underline;
 }
 
 nav {

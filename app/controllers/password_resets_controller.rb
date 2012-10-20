@@ -1,5 +1,8 @@
 class PasswordResetsController < ApplicationController
 
+  def new
+  end
+
   def create
     redirect_to [:new, :password_reset], flash: { error: t(:provide_email) } and return if params[:email].blank?
     user = User.where("email = ?", params[:email]).first

@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
 
+  def new
+  end
+
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      if params[:remember_me]
-        cookies.permanent[:auth_token] = user.auth_token
-      else
-        cookies[:auth_token] = user.auth_token
-      end
+      set_cookie(user, params)
       redirect_to root_url
     else
       flash.now[:error] = t(:invalid_sign_in)
@@ -18,6 +17,16 @@ class SessionsController < ApplicationController
   def destroy
     cookies.delete(:auth_token)
     redirect_to sign_in_path, flash: { success: t(:successful_sign_out) }
+  end
+
+  private
+
+  def set_cookie(user, params)
+    if params[:remember_me]
+      cookies.permanent[:auth_token] = user.auth_token
+    else
+      cookies[:auth_token] = user.auth_token
+    end
   end
 
 end
