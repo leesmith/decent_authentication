@@ -4,7 +4,6 @@ describe User do
 
   it { should validate_presence_of :email }
   it { should validate_presence_of :password }
-  it { should validate_presence_of :password_confirmation }
 
   context 'with an existing user' do
     before { Fabricate(:user, email: 'sam.adams@mail.com') }

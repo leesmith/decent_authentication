@@ -10,13 +10,15 @@ class SessionsController < ApplicationController
       end
       redirect_to root_url
     else
-      flash.now.alert = t(:invalid_sign_in)
+      flash.now[:error] = t(:invalid_sign_in)
       render :new
     end
   end
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to sign_in_path, notice: t(:successful_sign_out)
+    redirect_to sign_in_path, flash: { success: t(:successful_sign_out) }
   end
+
 end
+

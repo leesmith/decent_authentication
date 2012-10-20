@@ -5,6 +5,6 @@
     = content_tag :div, msg, id: "flash-#{name}"
   %div
     = label_tag :email
-    = text_field_tag :email, params[:email]
+    = email_field_tag :email, params[:email]
   %div
     = submit_tag t(:reset_password), class: 'button'

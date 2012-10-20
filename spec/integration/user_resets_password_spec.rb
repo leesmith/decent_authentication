@@ -31,7 +31,7 @@ describe 'User resets password' do
     click_first_link_in_email
     page.should have_content('Change Password')
     click_button 'Change Password'
-    page.should have_content("Password confirmation can't be blank")
+    page.should have_content("Password can't be blank")
     fill_in 'Password', with: 'newpassword'
     fill_in 'Password confirmation', with: 'newpassword'
     click_button 'Change Password'
