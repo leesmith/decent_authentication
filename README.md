@@ -7,5 +7,6 @@ See the 'rails-3.0' tag for a legacy Rails 3.0 implementation.
 
 ## Getting Started
 
+    cp config/database.postgres.yml config/database.yml
     rake setup
     bundle exec rake

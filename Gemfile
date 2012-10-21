@@ -3,12 +3,9 @@ source 'http://rubygems.org'
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'haml'
 gem 'jquery-rails'
+gem 'pg'
 gem 'rails'
 gem 'thin'
-
-gem 'mysql2' if ENV['DB'] == 'mysql'
-gem 'pg' if ENV['DB'] == 'postgres'
-gem 'sqlite3' if ENV['DB'].nil? || ENV['DB'] == 'sqlite'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,3 +32,4 @@ end
 group :development, :test do
   gem 'rspec-rails'
 end
+

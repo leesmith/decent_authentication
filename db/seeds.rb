@@ -1,1 +1,2 @@
-User.create(email: 'test@mail.com', password: 'test', password_confirmation: 'test') unless User.find_by_email('test@mail.com')
+User.create(email: 'test@example.com', password: 'password', password_confirmation: 'password') unless User.find_by_email('test@example.com')
+
