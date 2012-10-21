@@ -4,6 +4,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'haml'
 gem 'jquery-rails'
 gem 'rails'
+gem 'thin'
 
 gem 'mysql2' if ENV['DB'] == 'mysql'
 gem 'pg' if ENV['DB'] == 'postgres'
