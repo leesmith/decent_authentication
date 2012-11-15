@@ -1,4 +1,4 @@
-require 'integration/integration_helper'
+require 'features/features_helper'
 
 def sign_in(user)
   visit sign_in_path

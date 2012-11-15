@@ -1,4 +1,4 @@
-require 'integration/integration_helper'
+require 'features/features_helper'
 
 describe 'User session is remembered' do
 

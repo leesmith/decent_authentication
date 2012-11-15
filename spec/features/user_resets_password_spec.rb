@@ -1,4 +1,4 @@
-require 'integration/integration_helper'
+require 'features/features_helper'
 
 describe 'User resets password' do
 
@@ -14,7 +14,7 @@ describe 'User resets password' do
   end
 
   it 'for nonexistent email should have same UX' do
-    fill_in 'Email', with: 'bob.jones@mail.com'
+    fill_in 'email', with: 'bob.jones@mail.com'
     click_button 'Reset Password'
     current_path.should == sign_in_path
     page.should have_content('An email was just sent to you')
@@ -22,7 +22,7 @@ describe 'User resets password' do
   end
 
   it 'successfully' do
-    fill_in 'Email', with: 'sam.adams@mail.com'
+    fill_in 'email', with: 'sam.adams@mail.com'
     click_button 'Reset Password'
     current_path.should == sign_in_path
     page.should have_content('An email was just sent to you')
@@ -32,15 +32,15 @@ describe 'User resets password' do
     page.should have_content('Change Password')
     click_button 'Change Password'
     page.should have_content("Password can't be blank")
-    fill_in 'Password', with: 'newpassword'
-    fill_in 'Password confirmation', with: 'newpassword'
+    fill_in 'user_password', with: 'newpassword'
+    fill_in 'user_password_confirmation', with: 'newpassword'
     click_button 'Change Password'
     current_path.should == sign_in_path
     page.should have_content('Your password was successfully changed')
   end
 
   it 'unsuccessfully with expired password token' do
-    fill_in 'Email', with: 'sam.adams@mail.com'
+    fill_in 'email', with: 'sam.adams@mail.com'
     click_button 'Reset Password'
     current_path.should == sign_in_path
     page.should have_content('An email was just sent to you')
@@ -49,8 +49,8 @@ describe 'User resets password' do
     open_email('sam.adams@mail.com')
     click_first_link_in_email
     page.should have_content('Change Password')
-    fill_in 'Password', with: 'newpassword'
-    fill_in 'Password confirmation', with: 'newpassword'
+    fill_in 'user_password', with: 'newpassword'
+    fill_in 'user_password_confirmation', with: 'newpassword'
     click_button 'Change Password'
     current_path.should == new_password_reset_path
     page.should have_content('Password reset has expired')

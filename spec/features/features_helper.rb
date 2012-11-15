@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'capybara/rspec'
 
-# Put integration spec helpers inside /spec/integration/support
+# Put feature spec helpers inside /spec/features/support
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|

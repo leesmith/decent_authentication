@@ -1,4 +1,4 @@
-require 'integration/integration_helper'
+require 'features/features_helper'
 
 describe 'User registration' do
 
@@ -17,18 +17,18 @@ describe 'User registration' do
 
   it 'displays confirmation errors' do
     visit register_path
-    fill_in 'Email', with: 'jack@mail.com'
-    fill_in 'Password', with: 'welcome'
-    fill_in 'Password confirmation', with: 'nomatch'
+    fill_in 'user_email', with: 'jack@mail.com'
+    fill_in 'user_password', with: 'welcome'
+    fill_in 'user_password_confirmation', with: 'nomatch'
     click_button 'Register'
     page.should have_content("Password doesn't match confirmation")
   end
 
   it 'is successful' do
     visit register_path
-    fill_in 'Email', with: 'jack@mail.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'user_email', with: 'jack@mail.com'
+    fill_in 'user_password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
     click_button 'Register'
     page.should have_content('Thanks for signing up')
     current_path.should == root_path
