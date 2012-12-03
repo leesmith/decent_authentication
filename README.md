@@ -5,8 +5,12 @@ Decent Authentication is a sample application that implements authentication in 
 
 See the 'rails-3.0' tag for a legacy Rails 3.0 implementation.
 
+## Dependencies
+
+* Ruby 1.9+
+
 ## Getting Started
 
     cp config/database.postgres.yml config/database.yml
-    rake setup
-    bundle exec rake
+    bundle install
+    bundle exec rake setup

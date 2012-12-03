@@ -1,6 +1,7 @@
 *~
-.DS_Store
 .bundle
+.rbenv-version
+.rvmrc
 bin/*
 config/database.yml
 db/*.sqlite3
