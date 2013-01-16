@@ -5,7 +5,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails', '~> 3.2.9'
+gem 'rails', '~> 3.2.11'
 gem 'thin'
 
 # Gems used only for assets and not required
