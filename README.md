@@ -11,6 +11,9 @@ See the 'rails-3.0' tag for a legacy Rails 3.0 implementation.
 
 ## Getting Started
 
-    cp config/database.postgres.yml config/database.yml
-    bundle install
-    bundle exec rake setup
+```
+git clone git@github.com:leesmith/decent_authentication.git
+cd decent_authentication
+./bin/setup
+./bin/rake
+```
