@@ -6,6 +6,8 @@ describe 'User signs in' do
     sign_in Fabricate(:user)
     page.should have_content('You have successfully authenticated')
     current_path.should == root_path
+    visit sign_in_path
+    current_path.should == root_path
   end
 
   context 'when invalid attempt displays errors for' do
