@@ -1,9 +1,8 @@
-*~
-.bundle
-bin/*
-config/database.yml
-db/*.sqlite3
-log/*.log
-tmp/**/*
-tmp/*
-vendor/bundle
+/.bundle
+/config/database.yml
+/coverage
+/db/*.sqlite3
+/log/*
+/public/assets
+/tmp/*
+/vendor/bundle
