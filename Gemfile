@@ -28,7 +28,7 @@ end
 
 group :development do
   gem 'debugger'
-  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :development, :test do
