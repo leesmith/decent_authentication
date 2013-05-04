@@ -32,6 +32,9 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 
+  config.before(:each) { GC.disable }
+  config.after(:each) { GC.enable }
+
   config.include Delorean
 
   # email_spec helpers
