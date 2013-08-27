@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
+    user = User.where("email = ?", params[:email].downcase).first
     if user && user.authenticate(params[:password])
       set_cookie(user, params)
       redirect_to root_url
