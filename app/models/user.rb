@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   before_create { generate_token(:auth_token) }
+  before_save { |user| user.email.downcase! }
 
   validates_presence_of :password
   validates_presence_of :email

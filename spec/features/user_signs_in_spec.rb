@@ -10,6 +10,15 @@ describe 'User signs in' do
     current_path.should == root_path
   end
 
+  it 'successfully with mixed-case email address' do
+    user = Fabricate(:user, email: 'TeSt@EXample.com')
+    visit sign_in_path
+    fill_in 'Email', with: 'tEsT@exAMple.com'
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+    current_path.should == root_path
+  end
+
   context 'when invalid attempt displays errors for' do
     before { Fabricate(:user, email: 'jack@mail.com', password: 'welcome', password_confirmation: 'welcome') }
 
