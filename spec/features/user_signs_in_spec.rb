@@ -26,6 +26,21 @@ describe 'User signs in' do
     current_path.should == root_path
   end
 
+  it 'successfully with redirect to an intended url' do
+    user = Fabricate(:user)
+    visit user_path(user)
+    current_path.should == sign_in_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+    current_path.should == user_path(user)
+    click_button 'Sign out'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+    current_path.should == root_path
+  end
+
   context 'when invalid attempt displays errors for' do
     before { Fabricate(:user, email: 'jack@mail.com', password: 'welcome', password_confirmation: 'welcome') }
 

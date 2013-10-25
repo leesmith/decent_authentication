@@ -5,7 +5,7 @@ DecentAuthentication::Application.routes.draw do
   get 'sign-in' => 'sessions#new', as: 'sign_in'
   delete 'sign-out' => 'sessions#destroy', as: 'sign_out'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end

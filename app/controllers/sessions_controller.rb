@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
     user = User.where("email = ?", params[:email].downcase).first
     if user && user.authenticate(params[:password])
       set_cookie(user, params)
-      redirect_to root_url
+      session[:intended_destination].blank? ? redirect_to(root_url) : redirect_to(session[:intended_destination])
+      session[:intended_destination] = nil
     else
       flash.now[:error] = t(:invalid_sign_in)
       render :new
