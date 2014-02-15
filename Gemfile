@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
+
 ruby '1.9.3'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails', '~> 3.2'
-gem 'thin'
+gem 'rails', '~> 3.2.16'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +28,7 @@ end
 
 group :development do
   gem 'pry-rails'
+  gem 'thin'
 end
 
 group :development, :test do
