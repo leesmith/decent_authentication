@@ -25,11 +25,11 @@ class SessionsController < ApplicationController
 
   def set_cookie(user, params)
     if params[:remember_me]
-      # set a permanent signed cookie (expiring in 20 years)
-      cookies.permanent.signed[:auth_token] = user.auth_token
+      # set a permanent cookie (expiring in 20 years)
+      cookies.permanent[:auth_token] = user.auth_token
     else
-      # set a signed session cookie (deleted when browser is closed)
-      cookies.signed[:auth_token] = user.auth_token
+      # set a session cookie (deleted when browser is closed)
+      cookies[:auth_token] = user.auth_token
     end
   end
 
