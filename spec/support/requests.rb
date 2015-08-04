@@ -1,4 +1,4 @@
-require 'features/features_helper'
+require 'rails_helper'
 
 def sign_in(user)
   visit sign_in_path

@@ -21,17 +21,19 @@ group :test do
   gem 'database_cleaner'
   gem 'delorean'
   gem 'email_spec'
-  gem 'fabrication'
+  gem 'launchy'
   gem 'rake'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', require: false
   gem 'test-unit'
 end
 
 group :development do
-  gem 'pry-rails'
   gem 'thin'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '2.14.2'
+  gem 'fabrication'
+  gem 'pry-rails'
+  gem 'rspec-rails'
 end

@@ -1,13 +1,13 @@
-require 'features/features_helper'
+require 'rails_helper'
 
-describe 'User signs in' do
+RSpec.describe 'User signs in' do
 
   it 'successfully' do
     sign_in Fabricate(:user)
-    page.should have_content('You have successfully authenticated')
-    current_path.should == root_path
+    expect(page).to have_content('You have successfully authenticated')
+    expect(current_path).to eq root_path
     visit sign_in_path
-    current_path.should == root_path
+    expect(current_path).to eq root_path
   end
 
   it 'successfully with mixed-case email address' do
@@ -16,29 +16,29 @@ describe 'User signs in' do
     fill_in 'Email', with: 'tEsT@exAMple.com'
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-    current_path.should == root_path
+    expect(current_path).to eq root_path
   end
 
   it 'successfully with redirect to root path' do
     sign_in Fabricate(:user)
-    current_path.should == root_path
+    expect(current_path).to eq root_path
     visit sign_in_path
-    current_path.should == root_path
+    expect(current_path).to eq root_path
   end
 
   it 'successfully with redirect to an intended url' do
     user = Fabricate(:user)
     visit user_path(user)
-    current_path.should == sign_in_path
+    expect(current_path).to eq sign_in_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-    current_path.should == user_path(user)
+    expect(current_path).to eq user_path(user)
     click_button 'Sign out'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-    current_path.should == root_path
+    expect(current_path).to eq root_path
   end
 
   context 'when invalid attempt displays errors for' do
@@ -47,7 +47,7 @@ describe 'User signs in' do
     it 'empty form submission' do
       visit sign_in_path
       click_button 'Sign in'
-      page.should have_content('Invalid sign in attempt')
+      expect(page).to have_content('Invalid sign in attempt')
     end
 
     it 'incorrect password' do
@@ -55,7 +55,7 @@ describe 'User signs in' do
       fill_in 'Email', with: 'jack@mail.com'
       fill_in 'Password', with: 'nogood'
       click_button 'Sign in'
-      page.should have_content('Invalid sign in attempt')
+      expect(page).to have_content('Invalid sign in attempt')
     end
 
     it 'incorrect email' do
@@ -63,7 +63,7 @@ describe 'User signs in' do
       fill_in 'Email', with: 'bob@mail.com'
       fill_in 'Password', with: 'welcome'
       click_button 'Sign in'
-      page.should have_content('Invalid sign in attempt')
+      expect(page).to have_content('Invalid sign in attempt')
     end
   end
 

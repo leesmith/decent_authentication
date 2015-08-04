@@ -1,11 +1,11 @@
-require 'features/features_helper'
+require 'rails_helper'
 
-describe 'User signs out' do
+RSpec.describe 'User signs out' do
 
   it 'successfully' do
     sign_in Fabricate(:user)
     click_button 'Sign out'
-    current_path.should == sign_in_path
+    expect(current_path).to eq sign_in_path
   end
 
 end
