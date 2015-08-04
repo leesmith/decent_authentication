@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.1.6'
+ruby '2.2.2'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'haml'
@@ -24,6 +24,7 @@ group :test do
   gem 'fabrication'
   gem 'rake'
   gem 'shoulda-matchers'
+  gem 'test-unit'
 end
 
 group :development do
