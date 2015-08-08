@@ -21,7 +21,7 @@ RSpec.describe 'User registration' do
     fill_in 'user_password', with: 'welcome'
     fill_in 'user_password_confirmation', with: 'nomatch'
     click_button 'Register'
-    expect(page).to have_content("Password doesn't match confirmation")
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
   it 'is successful' do

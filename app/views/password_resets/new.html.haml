@@ -1,4 +1,4 @@
-%h1= t(:reset_password)
+%h1 Reset Password
 
 = form_tag [:password_resets], method: :post do
   = render partial: 'flash', locals: { flash: flash }
@@ -6,4 +6,4 @@
     = label_tag :email
     = email_field_tag :email, params[:email]
   %div
-    = submit_tag t(:reset_password), class: 'button'
+    = submit_tag 'Reset Password', class: 'button'

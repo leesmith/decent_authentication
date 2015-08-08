@@ -1,4 +1,4 @@
-%h1= t(:change_password)
+%h1 Change Password
 
 = form_for @user, url: password_reset_path(params[:id]) do |f|
   - if @user.errors.any?
@@ -13,4 +13,4 @@
     = f.label :password_confirmation
     = f.password_field :password_confirmation
   %div
-    = f.submit t(:change_password), class: 'button'
+    = f.submit 'Change Password', class: 'button'

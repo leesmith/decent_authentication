@@ -9,18 +9,24 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112231839) do
+ActiveRecord::Schema.define(version: 20150808041846) do
 
-  create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  null: false
     t.string   "auth_token"
+    t.string   "password_digest"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
+
+  add_index "users", ["auth_token"], name: "index_users_on_auth_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end
