@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       cookies[:auth_token] = @user.auth_token
-      redirect_to root_path, flash: { success: 'Thanks for signing up!' }
+      redirect_to root_path, success: 'Thanks for signing up!'
     else
       render :new
     end

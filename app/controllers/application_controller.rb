@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :authenticated_user
 
+  add_flash_types :error, :success, :info, :warning
+
   private
 
   def authenticated_user
@@ -13,7 +15,7 @@ class ApplicationController < ActionController::Base
   def require_authentication
     unless authenticated_user
       session[:intended_destination] = params
-      redirect_to sign_in_path, flash: { error: 'Please sign in before continuing!' }
+      redirect_to sign_in_path, error: 'Please sign in before continuing!'
     end
   end
 

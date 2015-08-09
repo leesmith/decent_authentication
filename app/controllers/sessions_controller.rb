@@ -6,10 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.where("email = ?", params[:email].downcase).first
-    if user && user.authenticate(params[:password])
+    if AuthenticateUser.call(user, params)
       set_cookie(user, params)
-      session[:intended_destination].blank? ? redirect_to(root_url) : redirect_to(session[:intended_destination])
-      session[:intended_destination] = nil
+      redirect_to(sign_in_destination)
     else
       flash.now[:error] = 'Invalid sign in attempt!'
       render :new
@@ -18,10 +17,16 @@ class SessionsController < ApplicationController
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to sign_in_path, flash: { success: 'Successfully signed out!' }
+    redirect_to sign_in_path, success: 'Successfully signed out!'
   end
 
   private
+
+  def sign_in_destination
+    intended_destination = session[:intended_destination]
+    session[:intended_destination] = nil
+    intended_destination.blank? ? root_url : intended_destination
+  end
 
   def set_cookie(user, params)
     if params[:remember_me]

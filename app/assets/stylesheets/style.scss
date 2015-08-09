@@ -128,12 +128,12 @@ label {
   margin: 0;
 }
 
-#flash-success, #flash-error {
+.flash-success, .flash-error {
   background-color: #fff;
   color: #585;
   font-weight: bold;
 }
-#flash-error {
+.flash-error {
   color: #c00;
 }
 
