@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
 
   def create
     user = User.where("email = ?", params[:email].downcase).first
-    if AuthenticateUser.call(user, params)
+    authentication = AuthenticateUser.new(user, params).call
+    if authentication.success?
       set_cookie(user, params)
       redirect_to(sign_in_destination)
     else
