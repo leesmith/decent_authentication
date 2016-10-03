@@ -7,7 +7,7 @@ Implementations in older versions of Rails are noted in their respective git tag
 
 ## Dependencies
 
-* Ruby 2.2
+* Ruby 2.3
 * PostgreSQL
 
 ## Getting Started
