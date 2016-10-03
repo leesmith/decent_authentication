@@ -4,10 +4,10 @@ ruby '2.3.1'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'haml'
+gem 'hamlit'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails', '4.2.3'
+gem 'rails', '~> 4.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
@@ -33,6 +33,6 @@ group :test do
   gem 'email_spec'
   gem 'launchy'
   gem 'rake'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end

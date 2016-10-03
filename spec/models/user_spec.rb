@@ -9,7 +9,7 @@ RSpec.describe User do
   context 'with an existing user' do
     before { Fabricate(:user, email: 'sam.adams@mail.com') }
     specify do
-      should validate_uniqueness_of :email
+      should validate_uniqueness_of(:email).case_insensitive
       should_not allow_value('Sam.Adams@mail.com').for(:email)
       should_not allow_value('saM.adaMs@mail.com').for(:email)
     end
