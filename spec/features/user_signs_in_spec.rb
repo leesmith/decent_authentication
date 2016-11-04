@@ -2,68 +2,67 @@ require 'rails_helper'
 
 RSpec.describe 'User signs in' do
 
-  it 'successfully' do
-    sign_in Fabricate(:user)
-    expect(page).to have_content('You have successfully authenticated')
-    expect(current_path).to eq root_path
-    visit sign_in_path
-    expect(current_path).to eq root_path
-  end
-
-  it 'successfully with mixed-case email address' do
-    user = Fabricate(:user, email: 'TeSt@EXample.com')
-    visit sign_in_path
-    fill_in 'Email', with: 'tEsT@exAMple.com'
-    fill_in 'Password', with: user.password
-    click_button 'Sign in'
-    expect(current_path).to eq root_path
-  end
-
-  it 'successfully with redirect to root path' do
-    sign_in Fabricate(:user)
-    expect(current_path).to eq root_path
-    visit sign_in_path
-    expect(current_path).to eq root_path
-  end
-
-  it 'successfully with redirect to an intended url' do
-    user = Fabricate(:user)
-    visit user_path(user)
-    expect(current_path).to eq sign_in_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign in'
-    expect(current_path).to eq user_path(user)
-    click_button 'Sign out'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Sign in'
-    expect(current_path).to eq root_path
-  end
-
-  context 'when invalid attempt displays errors for' do
-    before { Fabricate(:user, email: 'jack@mail.com', password: 'welcome', password_confirmation: 'welcome') }
-
-    it 'empty form submission' do
-      visit sign_in_path
-      click_button 'Sign in'
-      expect(page).to have_content('Invalid sign in attempt')
+  describe 'successfully' do
+    it 'with redirect from subsequent signin_path request' do
+      sign_in create(:user)
+      expect(page).to have_content('Welcome back')
+      expect(current_path).to eq root_path
+      visit signin_path
+      expect(current_path).to eq root_path
     end
 
-    it 'incorrect password' do
-      visit sign_in_path
-      fill_in 'Email', with: 'jack@mail.com'
-      fill_in 'Password', with: 'nogood'
-      click_button 'Sign in'
-      expect(page).to have_content('Invalid sign in attempt')
+    it 'with mixed-case email address' do
+      user = create(:user, email: 'TeSt@EXample.com')
+      visit signin_path
+      fill_in 'email', with: 'tEsT@exAMple.com'
+      fill_in 'password', with: user.password
+      click_button 'Sign In'
+      expect(current_path).to eq root_path
+      expect(page).to have_content('Welcome back')
     end
 
-    it 'incorrect email' do
-      visit sign_in_path
-      fill_in 'Email', with: 'bob@mail.com'
-      fill_in 'Password', with: 'welcome'
-      click_button 'Sign in'
-      expect(page).to have_content('Invalid sign in attempt')
+    it 'with redirect to an intended url' do
+      user = create(:user)
+      visit profile_path
+      expect(current_path).to eq signin_path
+      fill_in 'email', with: user.email
+      fill_in 'password', with: user.password
+      click_button 'Sign In'
+      expect(current_path).to eq profile_path
+      expect(page).to have_content('Welcome back')
+    end
+  end
+
+  describe 'unsuccessfully' do
+    let!(:user) { create(:user, email: 'jack@mail.com') }
+    before { visit signin_path }
+
+    it 'with empty form submission' do
+      click_button 'Sign In'
+      expect(page).to have_content('The email or password you entered was not recognized')
+    end
+
+    it 'with incorrect password' do
+      fill_in 'email', with: 'jack@mail.com'
+      fill_in 'password', with: 'nogood'
+      click_button 'Sign In'
+      expect(page).to have_content('The email or password you entered was not recognized')
+    end
+
+    it 'with incorrect email' do
+      fill_in 'email', with: 'bob@mail.com'
+      fill_in 'password', with: 'welcome'
+      click_button 'Sign In'
+      expect(page).to have_content('The email or password you entered was not recognized')
+    end
+
+    it 'with disabled user' do
+      user.update_attribute(:enabled, false)
+      fill_in 'email', with: 'jack@mail.com'
+      fill_in 'password', with: 'welcome'
+      click_button 'Sign In'
+      expect(page).to have_content('Your account has been disabled')
+      expect(current_path).to eq '/sessions'
     end
   end
 

@@ -8,21 +8,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      cookies[:auth_token] = @user.auth_token
-      redirect_to root_path, success: 'Thanks for signing up!'
+      redirect_to signin_url, success: 'Thanks for signing up! You may now sign in.'
     else
       render :new
     end
-  end
-
-  def show
-    @user = User.where(id: params[:id]).first
   end
 
   private
 
   def user_params
     params.require(:user).permit(
+      :name,
       :email,
       :password,
       :password_confirmation

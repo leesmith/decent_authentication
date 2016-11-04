@@ -4,12 +4,14 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore bundler config.
 /.bundle
+/brakeman.html
+/rails_best_practices.html
 /config/database.yml
 /coverage
+
+# Ignore all logfiles and tempfiles.
 /log/*
+/tmp/*
 !/log/.keep
-/spec/examples.txt
-/tmp
-/vendor/bundle
+!/tmp/.keep

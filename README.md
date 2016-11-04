@@ -1,9 +1,12 @@
 # Decent Authentication
 [![Build Status](https://travis-ci.org/leesmith/decent_authentication.svg?branch=master)](https://travis-ci.org/leesmith/decent_authentication) [![Code Climate](https://codeclimate.com/github/leesmith/decent_authentication/badges/gpa.svg)](https://codeclimate.com/github/leesmith/decent_authentication) [![Test Coverage](https://codeclimate.com/github/leesmith/decent_authentication/badges/coverage.svg)](https://codeclimate.com/github/leesmith/decent_authentication/coverage)
 
-Decent Authentication is a sample application that implements authentication in Rails 4 without the use of a third-party generator or engine.  This is essentially a complete reproduction of [Ryan Bates' Authentication from Scratch railscast](http://railscasts.com/episodes/250-authentication-from-scratch-revised) with the addition of my RSpec test suite. In addition to authentication, features include rememberable cookie, password reset, and forwarding to protected routes.
+Decent Authentication is a sample application that implements authentication in Rails without the
+use of a third-party generator or engine. You might often hear the advice that you should not "Roll
+your own authentication" but that doesn't mean you **have** to use a gem.
 
-Implementations in older versions of Rails are noted in their respective git tags.
+In addition to authentication using Rails' built-in `has_secure_password` and `has_secure_token`,
+features include enabled/disabled user, password reset, and forwarding to protected routes.
 
 ## Dependencies
 
@@ -12,10 +15,21 @@ Implementations in older versions of Rails are noted in their respective git tag
 
 ## Getting Started
 
+Run the setup script, start the server, then click 'Create Account' from the sign in screen.
+
 ```
 # install gems, create database.yml config, and setup the database
 ./bin/setup
+```
 
+## Testing
+
+```
 # run the test suite
 ./bin/rake
+```
+
+```
+# run the test suite as well as brakeman, simplecov, and rails_best_practices
+./bin/rake analyze
 ```

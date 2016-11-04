@@ -1,13 +1,14 @@
 class PasswordResetsController < ApplicationController
+  skip_before_action :require_authentication
 
   def new
   end
 
   def create
-    redirect_to([:new, :password_reset], error: 'You must provide an email!') and return if params[:email].blank?
-    user = User.where("email = ?", params[:email]).first
-    user.send_password_reset if user
-    redirect_to sign_in_path, success: 'An email was just sent to you with password reset instructions.'
+    redirect_to new_password_reset_url, error: 'You must provide an email address!' and return if params[:email].blank?
+    user = User.find_by(email: params[:email])
+    SendPasswordResetRequest.new(user).call if user
+    redirect_to signin_url, success: 'An email was just sent to you with password reset instructions.' and return
   end
 
   def edit
@@ -16,11 +17,13 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user = User.find_by(password_reset_token: params[:id])
-    @user.force_password_validation = true
     if @user.password_reset_sent_at < 2.hours.ago
-      redirect_to new_password_reset_path, error: 'Password reset has expired! Please submit another request.'
-    elsif @user.update_attributes(user_params)
-      redirect_to sign_in_path, success: 'Your password was successfully changed!'
+      redirect_to new_password_reset_url, error: 'This password reset request has expired. Please submit another request.'
+    elsif @user.update(user_params)
+      # clear out password reset fields now that they have been used
+      @user.update_columns(password_reset_token: nil, password_reset_sent_at: nil)
+      reset_session
+      redirect_to signin_url, success: 'Your password was successfully changed. Please sign in.'
     else
       render :edit
     end

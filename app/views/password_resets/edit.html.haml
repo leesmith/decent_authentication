@@ -1,16 +1,17 @@
-%h1 Change Password
-
-= form_for @user, url: password_reset_path(params[:id]) do |f|
-  - if @user.errors.any?
-    .error-messages
-      %ul
-        - @user.errors.full_messages.each do |message|
-          %li= message
-  %div
-    = f.label :password
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-  %div
-    = f.submit 'Change Password', class: 'button'
+.row
+  .col-lg-6.offset-lg-3
+    .card
+      %h4.card-header.text-xs-center Change Password
+      .card-block
+        .alert.alert-info(role='alert')
+          Passwords must be at least <strong>8 characters</strong> long and contain numbers and letters.
+        = form_for @user, url: password_reset_path(params[:id]) do |f|
+          .form-group{class: form_error_class(@user, :password)}
+            %label.form-control-label(for='user_password') New Password
+            = f.password_field :password, autofocus: true, required: true, class: 'form-control form-control-lg'
+            = model_error_display(@user, :password)
+          .form-group{class: form_error_class(@user, :password_confirmation)}
+            %label.form-control-label(for='user_password_confirmation') Password Confirmation
+            = f.password_field :password_confirmation, class: 'form-control form-control-lg'
+            = model_error_display(@user, :password_confirmation)
+          = f.submit 'Save', class: 'btn btn-lg btn-block btn-primary', data: { disable_with: 'Please wait...' }

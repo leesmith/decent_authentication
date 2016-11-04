@@ -1,22 +1,26 @@
 !!!
-%html{lang: I18n.locale}
+%html{lang: 'en'}
   %head
     %meta{charset: 'utf-8'}
-    = stylesheet_link_tag 'application'
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'}
+    %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
+    %title Decent Authentication
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tag
-    %title Decent Authentication
-  %body
-    %section
-      %article
-        = yield
-    %header
-      %nav
-        - if authenticated_user
-          = "Signed in as #{authenticated_user.email}"
-          |
-          = button_to 'Sign out', sign_out_path, method: :delete, class: 'button-link'
-        - else
-          = link_to 'Register', register_path
-          or
-          = link_to 'Sign in', sign_in_path
+  %body{class: "#{controller_name} #{action_name}"}
+    - if authenticated_user
+      %nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+        %ul.nav.navbar-nav
+          %li.nav-item
+            %a.nav-link(href="#{root_path}") Home
+        %ul.nav.navbar-nav.float-xs-right
+          %li.nav-item
+            = link_to 'Profile', profile_path, class: 'nav-link'
+          %li.nav-item
+            = link_to 'Sign out', signout_path, method: :delete, class: 'btn btn-danger', id: 'nav-signout'
+
+    .container
+      - unless flash.empty?
+        = render partial: 'flash', locals: { flash: flash }
+      = yield

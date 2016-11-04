@@ -1,9 +1,11 @@
-%h1 Reset Password
-
-= form_tag [:password_resets], method: :post do
-  = render partial: 'flash', locals: { flash: flash }
-  %div
-    = label_tag :email
-    = email_field_tag :email, params[:email]
-  %div
-    = submit_tag 'Reset Password', class: 'button'
+.row
+  .col-lg-6.offset-lg-3
+    .card
+      %h4.card-header.text-xs-center Reset Your Password
+      .card-block
+        = form_tag [:password_resets], method: :post do
+          .form-group
+            %label.sr-only(for='email') Email address
+            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control form-control-lg', required: true, placeholder: 'Email'
+          .form-group
+            = submit_tag 'Send Instructions', class: 'btn btn-primary btn-block btn-lg', data: { disable_with: 'Please wait...' }

@@ -1,18 +1,17 @@
-%h1 Sign in
-
-= form_tag [:sessions] do
-  = render partial: 'flash', locals: { flash: flash }
-  %div
-    = label_tag :email
-    = email_field_tag :email, params[:email]
-  %div
-    = label_tag :password
-    = password_field_tag :password
-  %div
-    = check_box_tag :remember_me, 1, params[:remember_me]
-    = label_tag :remember_me, 'Remember me', id: 'remember-me'
-  %div
-    %strong Help:
-    = link_to 'Forgot password?', [:new, :password_reset]
-  %div
-    = submit_tag 'Sign in', class: 'button'
+.row
+  .col-lg-4.offset-lg-4
+    %h2.text-xs-center Sign In
+    .card
+      .card-block
+        = form_tag [:sessions], role: 'form' do
+          .form-group
+            %label.sr-only(for="email") Email
+            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control form-control-lg', required: true, placeholder: 'Email', tabindex: 1
+          .form-group
+            %label.sr-only(for='password') Password
+            = password_field_tag :password, nil, required: true, placeholder: 'Password', class: 'form-control form-control-lg', tabindex: 2
+          = submit_tag 'Sign In', class: 'btn btn-primary btn-lg btn-block', tabindex: 3
+      .card-footer
+        = link_to 'Forgot Your Password?', new_password_reset_path
+    %p.text-xs-center
+      = link_to 'Create Account', register_path

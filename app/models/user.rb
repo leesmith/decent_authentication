@@ -1,32 +1,24 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+  attr_accessor :skip_password_validation
 
-  attr_accessor :force_password_validation
-
-  validates :email, presence: true
+  validates :name, :email, presence: true
   validates_uniqueness_of :email, case_sensitive: false
-  validates_format_of :email, with: /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i, allow_blank: true
-  validates_presence_of :password, if: Proc.new { |u| u.force_password_validation? }
+  validates_format_of :email, with: /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
+  validates_presence_of :password, unless: Proc.new { |u| u.skip_password_validation? }
+  validates_length_of :password, minimum: 8, too_short: 'must be at least 8 characters',
+    unless: Proc.new { |u| u.skip_password_validation? }
+  validates_format_of :password, with: /\A(?=.*[a-z])(?=.*\d).+\z/i,
+    message: 'must be alphanumeric',
+    unless: Proc.new { |u| u.skip_password_validation? }
 
-  before_create { generate_token(:auth_token) }
   before_save { |user| user.email.downcase! }
 
   has_secure_password
+  has_secure_token :auth_token
+  has_secure_token :password_reset_token
 
-  def generate_token(column)
-    begin
-      self[column] = SecureRandom.urlsafe_base64
-    end while User.exists?(column => self[column])
-  end
-
-  def send_password_reset
-    generate_token(:password_reset_token)
-    self.password_reset_sent_at = Time.zone.now
-    save(validate: false)
-    UserMailer.password_reset(self).deliver_now
-  end
-
-  def force_password_validation?
-    force_password_validation
+  def skip_password_validation?
+    skip_password_validation
   end
 
 end
