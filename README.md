@@ -5,8 +5,17 @@ Decent Authentication is a sample application that implements authentication in 
 use of a third-party generator or engine. You might often hear the advice that you should not "Roll
 your own authentication" but that doesn't mean you **have** to use a gem.
 
-In addition to authentication using Rails' built-in `has_secure_password` and `has_secure_token`,
-features include enabled/disabled user, password reset, and forwarding to protected routes.
+Features:
+
+- Only allow enabled users to sign in
+- Request password reset via email
+- Forward to protected routes upon successful sign in
+
+Secure defaults:
+
+- Passwords must be 8 alphanumeric characters
+- Password reset requests expire after 2 hours
+- Session cookies expire after 1 day
 
 ## Dependencies
 
