@@ -15,7 +15,7 @@ Secure defaults:
 
 - Passwords must be 8 alphanumeric characters
 - Password reset requests expire after 2 hours
-- Session cookies expire after 1 day
+- Session cookies expire after 30 minutes
 
 ## Dependencies
 
