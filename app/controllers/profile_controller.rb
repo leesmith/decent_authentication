@@ -6,7 +6,6 @@ class ProfileController < ApplicationController
 
   def update
     @user = authenticated_user
-    @user.skip_password_validation = params[:user][:password].blank? ? true : false
     if @user.update(user_params)
       redirect_to profile_url, success: 'Your profile was successfully updated!'
     else
