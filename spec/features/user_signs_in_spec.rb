@@ -17,8 +17,10 @@ RSpec.describe 'User signs in' do
       fill_in 'email', with: 'tEsT@exAMple.com'
       fill_in 'password', with: user.password
       click_button 'Sign In'
+      user.reload
       expect(current_path).to eq root_path
       expect(page).to have_content('Welcome back')
+      expect(user.last_sign_in_at).to_not be nil
     end
 
     it 'with redirect to an intended url' do

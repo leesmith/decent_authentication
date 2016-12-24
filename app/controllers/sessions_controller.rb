@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       intended_url = session[:intended_destination]
       reset_session
       session[:auth_token] = user.auth_token
+      user.touch(:last_sign_in_at)
       flash[:success] = authentication_attempt.flash
       redirect_to intended_url.blank? ? root_url : intended_url
     else
