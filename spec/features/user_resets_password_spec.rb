@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'User resets password' do
 
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, email: 'sam.jones@example.com') }
 
   describe 'with valid reset token' do
     before do
       visit new_password_reset_path
-      fill_in 'email', with: user.email
+      fill_in 'email', with: 'Sam.Jones@example.com'
       click_on 'Send Instructions'
       expect(unread_emails_for(user.email).size).to eq 1
       open_email(user.email)

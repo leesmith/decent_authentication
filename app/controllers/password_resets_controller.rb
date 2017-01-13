@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
 
   def create
     redirect_to new_password_reset_url, error: 'You must provide an email address!' and return if params[:email].blank?
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email].downcase)
     SendPasswordResetRequest.new(user).call if user
     redirect_to signin_url, success: 'An email was just sent to you with password reset instructions.' and return
   end
