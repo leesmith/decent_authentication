@@ -10,11 +10,11 @@
     = csrf_meta_tag
   %body{class: "#{controller_name} #{action_name}"}
     - if authenticated_user
-      %nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-        %ul.nav.navbar-nav
+      %nav.navbar.fixed-top.navbar-toggleable-sm.navbar-light.bg-faded
+        %ul.navbar-nav.mr-auto
           %li.nav-item
             %a.nav-link(href="#{root_path}") Home
-        %ul.nav.navbar-nav.float-xs-right
+        %ul.navbar-nav.justity-content-right
           %li.nav-item
             = link_to 'Profile', profile_path, class: 'nav-link'
           %li.nav-item

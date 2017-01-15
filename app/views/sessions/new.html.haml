@@ -1,17 +1,17 @@
 .row
   .col-lg-4.offset-lg-4
-    %h2.text-xs-center Sign In
+    %h2.text-center Sign In
     .card
       .card-block
         = form_tag [:sessions], role: 'form' do
           .form-group
             %label.sr-only(for="email") Email
-            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control form-control-lg', required: true, placeholder: 'Email', tabindex: 1
+            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', required: true, placeholder: 'Email', tabindex: 1
           .form-group
             %label.sr-only(for='password') Password
-            = password_field_tag :password, nil, required: true, placeholder: 'Password', class: 'form-control form-control-lg', tabindex: 2
-          = submit_tag 'Sign In', class: 'btn btn-primary btn-lg btn-block', tabindex: 3
+            = password_field_tag :password, nil, required: true, placeholder: 'Password', class: 'form-control', tabindex: 2
+          = submit_tag 'Sign In', class: 'btn btn-primary btn-block', tabindex: 3
       .card-footer
         = link_to 'Forgot Your Password?', new_password_reset_path
-    %p.text-xs-center
-      = link_to 'Create Account', register_path
+    .text-center.my-3
+      %p= link_to 'Create Account', register_path

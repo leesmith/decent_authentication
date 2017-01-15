@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.enabled = true
     if @user.save
       redirect_to signin_url, success: 'Thanks for signing up! You may now sign in.'
     else

@@ -1,6 +1,6 @@
 .row
   .col-lg-6.offset-lg-3
-    %h2.text-xs-center Edit Profile
+    %h2.text-center Edit Profile
     .card
       .card-block
         = form_for @user, url: update_profile_path do |f|
@@ -17,13 +17,13 @@
             = model_error_display(@user, :email)
           .form-group{class: form_error_class(@user, :password)}
             %label.form-control-label(for='user_password') Password
-            .float-xs-right
+            .float-right
               %small.text-muted Optional
             = f.password_field :password, class: 'form-control'
             = model_error_display(@user, :password)
           .form-group{class: form_error_class(@user, :password_confirmation)}
             %label.form-control-label(for='user_password_confirmation') Password Confirmation
-            .float-xs-right
+            .float-right
               %small.text-muted Optional
             = f.password_field :password_confirmation, class: 'form-control'
             = model_error_display(@user, :password_confirmation)
