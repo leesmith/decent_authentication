@@ -64,7 +64,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    chronic (0.10.2)
     code_analyzer (0.4.7)
       sexp_processor
     codeclimate-test-reporter (1.0.3)
@@ -81,8 +80,6 @@ GEM
     daemons (1.2.4)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
-    delorean (2.1.0)
-      chronic
     diff-lcs (1.2.5)
     docile (1.1.5)
     email_spec (2.1.0)
@@ -247,7 +244,6 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
   database_cleaner
-  delorean
   email_spec
   factory_girl_rails
   hamlit
@@ -271,4 +267,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.13.7

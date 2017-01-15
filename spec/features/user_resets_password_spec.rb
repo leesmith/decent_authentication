@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User resets password' do
 
+  include ActiveSupport::Testing::TimeHelpers
+
   let!(:user) { create(:user, email: 'sam.jones@example.com') }
 
   describe 'with valid reset token' do
@@ -46,16 +48,17 @@ RSpec.describe 'User resets password' do
     end
 
     it 'unsuccessfully with expired password token' do
-      expect(unread_emails_for(user.email).size).to eq 1
-      Delorean.time_travel_to 2.hours.from_now
-      open_email(user.email)
-      click_first_link_in_email
-      expect(page).to have_content('Change Password')
-      fill_in 'user_password', with: 'newpassword'
-      fill_in 'user_password_confirmation', with: 'newpassword'
-      click_button 'Save'
-      expect(current_path).to eq new_password_reset_path
-      expect(page).to have_content('This password reset request has expired')
+      travel_to 2.01.hours.from_now do
+        expect(unread_emails_for(user.email).size).to eq 1
+        open_email(user.email)
+        click_first_link_in_email
+        expect(page).to have_content('Change Password')
+        fill_in 'user_password', with: 'newpassword'
+        fill_in 'user_password_confirmation', with: 'newpassword'
+        click_button 'Save'
+        expect(current_path).to eq new_password_reset_path
+        expect(page).to have_content('This password reset request has expired')
+      end
     end
   end
 

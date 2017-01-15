@@ -33,7 +33,6 @@ group :test do
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
   gem 'database_cleaner'
-  gem 'delorean'
   gem 'email_spec'
   gem 'launchy'
   gem 'rake'

@@ -17,7 +17,7 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user = User.find_by(password_reset_token: params[:id])
-    if @user.password_reset_sent_at < 2.hours.ago
+    if @user.password_reset_sent_at <= 2.hours.ago
       redirect_to new_password_reset_url, error: 'This password reset request has expired. Please submit another request.'
     elsif params[:user][:password].blank?
       @user.errors.add(:password, "can't be blank")
