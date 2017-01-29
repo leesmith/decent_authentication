@@ -6,6 +6,6 @@
         = form_tag [:password_resets], method: :post do
           .form-group
             %label.sr-only(for='email') Email address
-            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control form-control-lg', required: true, placeholder: 'Email'
+            = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', required: true, placeholder: 'Email'
           .form-group
-            = submit_tag 'Send Instructions', class: 'btn btn-primary btn-block btn-lg', data: { disable_with: 'Please wait...' }
+            = submit_tag 'Send Instructions', class: 'btn btn-primary btn-block', data: { disable_with: 'Please wait...' }
