@@ -1,7 +1,7 @@
 .row
   .col-lg-6.offset-lg-3
-    %h2.text-center Create New Account
     .card
+      %h4.card-header.text-center Create New Account
       .card-block
         = form_for @user do |f|
           - if @user.errors.any?
@@ -9,7 +9,7 @@
               Please correct the errors below to continue.
           .form-group{class: form_error_class(@user, :name)}
             %label.form-control-label(for='user_name') Name
-            = f.text_field :name, class: 'form-control'
+            = f.text_field :name, autofocus: true, class: 'form-control'
             = model_error_display(@user, :name)
           .form-group{class: form_error_class(@user, :email)}
             %label.form-control-label(for='user_email') Email
