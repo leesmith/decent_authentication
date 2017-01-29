@@ -17,25 +17,18 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user = User.find_by(password_reset_token: params[:id])
-    if @user.password_reset_sent_at <= 2.hours.ago
-      redirect_to new_password_reset_url, error: 'This password reset request has expired. Please submit another request.'
-    elsif params[:user][:password].blank?
-      @user.errors.add(:password, "can't be blank")
+    password_recovery = RecoverPassword.new(@user, params).call
+
+    if password_recovery.expired?
+      redirect_to new_password_reset_url, error: password_recovery.flash
+    elsif password_recovery.blank_password?
       render :edit
-    elsif @user.update(user_params)
-      # clear out password reset fields now that they have been used
-      @user.erase_password_reset_fields
+    elsif password_recovery.success?
       reset_session
-      redirect_to signin_url, success: 'Your password was successfully changed. Please sign in.'
+      redirect_to signin_url, success: password_recovery.flash
     else
       render :edit
     end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:password, :password_confirmation)
   end
 
 end
