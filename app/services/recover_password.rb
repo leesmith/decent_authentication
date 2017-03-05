@@ -36,7 +36,7 @@ class RecoverPassword
   end
 
   def blank_password?
-    @blank
+    @blank_password
   end
 
 end
