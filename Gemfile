@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.3'
+ruby '2.4.1'
 
 gem 'bcrypt'
 gem 'bootstrap', '~> 4.0.0.alpha5'
