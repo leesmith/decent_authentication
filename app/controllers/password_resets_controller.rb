@@ -13,6 +13,10 @@ class PasswordResetsController < ApplicationController
 
   def edit
     @user = User.find_by(password_reset_token: params[:id])
+
+    if @user.blank?
+      redirect_to new_password_reset_url, error: 'Invalid request! Please use the form below to request password reset instructions again.' and return
+    end
   end
 
   def update

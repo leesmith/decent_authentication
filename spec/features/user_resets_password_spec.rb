@@ -47,6 +47,12 @@ RSpec.describe 'User resets password' do
       click_on 'Send Instructions'
     end
 
+    it 'unsuccessfully with unknown reset token' do
+      visit edit_password_reset_path(id: 'abcd')
+      expect(page).to have_content 'Invalid request'
+      expect(current_path).to eq new_password_reset_path
+    end
+
     it 'unsuccessfully with expired password token' do
       travel_to 2.01.hours.from_now do
         expect(unread_emails_for(user.email).size).to eq 1
