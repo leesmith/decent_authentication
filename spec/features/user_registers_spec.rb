@@ -10,7 +10,7 @@ RSpec.describe 'User registration' do
 
   it 'does not allow empty submissions' do
     visit register_path
-    click_button 'Submit'
+    click_button 'Save'
     expect(page).to have_content('Please correct the errors')
     expect(page).to have_form_field_error_for('user_name')
     expect(page).to have_form_field_error_for('user_email')
@@ -23,7 +23,7 @@ RSpec.describe 'User registration' do
     fill_in 'user_email', with: 'jim@example.com'
     fill_in 'user_password', with: 'LK234lwe'
     fill_in 'user_password_confirmation', with: 'LK234lwe'
-    click_button 'Submit'
+    click_button 'Save'
     expect(page).to have_content('Thanks for signing up')
     expect(current_path).to eq signin_path
   end

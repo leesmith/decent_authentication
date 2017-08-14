@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       flash[:success] = authentication_attempt.flash
       redirect_to intended_url.blank? ? root_url : intended_url
     else
-      flash[:error] = authentication_attempt.flash
+      flash.now[:error] = authentication_attempt.flash
       render :new
     end
   end

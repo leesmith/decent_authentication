@@ -1,5 +1,6 @@
 - flash.each do |type, message|
   %div(class="alert #{bootstrap_class_for(type)} alert-dismissible fade show" role="alert")
-    %button.close{type: 'button', 'aria-label' => "Close", data: { dismiss: 'alert'}}
-      %span(aria-hidden="true") &times;
-    = message.html_safe if message
+    .container
+      %button.close{type: 'button', 'aria-label' => "Close", data: { dismiss: 'alert'}}
+        %span(aria-hidden="true") &times;
+      = message.html_safe if message

@@ -2,19 +2,19 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 gem 'bcrypt'
-gem 'bootstrap', '4.0.0.alpha6'
-gem 'coffee-rails', '~> 4.2'
+gem 'bootstrap'
 gem 'hamlit'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
 
 group :development, :test do
   gem 'awesome_print'
