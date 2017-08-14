@@ -4,7 +4,7 @@
       .card
         %h4.card-header.text-center Sign In
         .card-body
-          = form_tag [:sessions], role: 'form' do
+          = form_tag [:sessions] do
             .form-group
               %label.form-control-label(for="email") Email
               = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', tabindex: 1
