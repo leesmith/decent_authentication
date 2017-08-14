@@ -1,5 +1,5 @@
 # Decent Authentication
-[![Build Status](https://travis-ci.org/leesmith/decent_authentication.svg?branch=master)](https://travis-ci.org/leesmith/decent_authentication) [![Code Climate](https://codeclimate.com/github/leesmith/decent_authentication/badges/gpa.svg)](https://codeclimate.com/github/leesmith/decent_authentication) [![Test Coverage](https://codeclimate.com/github/leesmith/decent_authentication/badges/coverage.svg)](https://codeclimate.com/github/leesmith/decent_authentication/coverage)
+[![Build Status](https://travis-ci.org/leesmith/decent_authentication.svg?branch=master)](https://travis-ci.org/leesmith/decent_authentication) [![Code Climate](https://codeclimate.com/github/leesmith/decent_authentication/badges/gpa.svg)](https://codeclimate.com/github/leesmith/decent_authentication)
 
 Decent Authentication is a sample application that implements authentication in Rails without the
 use of a third-party generator or engine. You might often hear the advice that you should not "Roll
@@ -19,7 +19,7 @@ Secure defaults:
 
 ## Dependencies
 
-* Ruby 2.3
+* Ruby 2.4
 * PostgreSQL
 
 ## Getting Started
