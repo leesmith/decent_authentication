@@ -34,6 +34,8 @@ body {
 }
 
 .icon {
+  font-size: 24px;
+  color: #999;
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -43,9 +45,10 @@ body {
   vertical-align: middle;
 }
 
-.icon-twitter, .icon-github {
-  font-size: 24px;
-  color: #999;
+.nav-item .nav-link:hover {
+  .icon {
+    color: rgba(0, 0, 0, 0.7);
+  }
 }
 
 .icon-twitter:hover {

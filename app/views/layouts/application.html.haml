@@ -11,12 +11,18 @@
       %nav.navbar.navbar-expand-md.fixed-top.navbar-light.bg-light
         %ul.navbar-nav.mr-auto
           %li.nav-item
-            %a.nav-link(href="#{root_path}") Decent Authentication
+            = link_to root_path, class: 'nav-link' do
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>decent authentication</title><path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path></symbol></svg>
+              Decent Authentication
         %ul.navbar-nav.justity-content-right
           %li.nav-item
-            = link_to 'Profile', profile_path, class: 'nav-link'
+            = link_to profile_path, class: 'nav-link' do
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>profile</title><path d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path></symbol></svg>
+              Profile
           %li.nav-item
-            = link_to 'Sign out', signout_path, method: :delete, class: 'nav-link text-danger', id: 'nav-signout', data: { confirm: 'Are you sure you wish to sign out?' }
+            = link_to signout_path, method: :delete, class: 'nav-link text-danger', id: 'nav-signout', data: { confirm: 'Are you sure you wish to sign out?' } do
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>signout</title><path d="M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z"></path></symbol></svg>
+              Sign out
 
     - unless flash.empty?
       = render partial: 'flash', locals: { flash: flash }
