@@ -17,6 +17,8 @@ Secure defaults:
 - Password reset requests expire after 2 hours
 - Session cookies expire after 30 minutes
 
+[Demo](https://decent-authentication.herokuapp.com/sign-in)
+
 ## Dependencies
 
 * Ruby 2.4
