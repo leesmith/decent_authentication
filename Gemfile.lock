@@ -85,10 +85,10 @@ GEM
     erubis (2.7.0)
     eventmachine (1.2.5)
     execjs (2.7.0)
-    factory_girl (4.8.1)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.8.0)
-      factory_girl (~> 4.8.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.18)
     globalid (0.4.0)
@@ -124,7 +124,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
     popper_js (1.11.1)
-    pry (0.11.1)
+    pry (0.11.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-byebug (3.5.0)
@@ -172,23 +172,23 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     require_all (1.4.0)
-    rspec-core (3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-expectations (3.6.0)
+    rspec-core (3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-mocks (3.6.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-rails (3.6.1)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-support (3.6.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.0)
     ruby-progressbar (1.9.0)
     sass (3.5.2)
       sass-listen (~> 4.0.0)
@@ -244,13 +244,13 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
-  bootstrap
+  bootstrap (= 4.0.0.beta)
   brakeman
   capybara
   codeclimate-test-reporter
   database_cleaner
   email_spec
-  factory_girl_rails
+  factory_bot_rails
   hamlit
   jquery-rails
   launchy

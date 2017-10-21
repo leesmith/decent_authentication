@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
-gem 'bootstrap'
+gem 'bootstrap', '4.0.0.beta'
 gem 'hamlit'
 gem 'jquery-rails'
 gem 'pg'
@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'awesome_print'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails'
