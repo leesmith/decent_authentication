@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
-gem 'bootstrap', '4.0.0.beta'
+gem 'bootstrap'
 gem 'hamlit'
 gem 'jquery-rails'
 gem 'pg'
