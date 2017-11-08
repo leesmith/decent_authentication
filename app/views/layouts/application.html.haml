@@ -26,7 +26,8 @@
               Sign out
 
     - unless flash.empty?
-      = render partial: 'flash', locals: { flash: flash }
+      .container
+        = render partial: 'flash', locals: { flash: flash }
     = yield
 
     %footer.footer
