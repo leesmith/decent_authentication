@@ -8,11 +8,11 @@
             Passwords must be at least <strong>8 characters</strong> long and contain numbers and letters.
           = form_for @user, url: password_reset_path(params[:id]) do |f|
             .form-group{class: form_error_class(@user, :password)}
-              %label.form-control-label(for='user_password') New Password
+              %label(for='user_password') New Password
               = f.password_field :password, autofocus: true, required: true, class: 'form-control'
               = model_error_display(@user, :password)
             .form-group{class: form_error_class(@user, :password_confirmation)}
-              %label.form-control-label(for='user_password_confirmation') Password Confirmation
+              %label(for='user_password_confirmation') Password Confirmation
               = f.password_field :password_confirmation, class: 'form-control'
               = model_error_display(@user, :password_confirmation)
             = f.submit 'Save', class: 'btn btn-block btn-primary', data: { disable_with: 'Please wait...' }

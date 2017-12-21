@@ -6,7 +6,7 @@
         .card-body
           = form_tag [:password_resets], method: :post do
             .form-group
-              %label.form-control-label(for='email') Email
+              %label(for='email') Email
               = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', required: true
             = submit_tag 'Send Instructions', class: 'btn btn-primary btn-block', data: { disable_with: 'Please wait...' }
       %p.text-center.my-3

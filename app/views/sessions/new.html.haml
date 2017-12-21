@@ -6,11 +6,11 @@
         .card-body
           = form_tag [:sessions] do
             .form-group
-              %label.form-control-label(for="email") Email
+              %label(for="email") Email
               = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', tabindex: 1
             .form-group
               .d-flex.justify-content-between
-                %label.form-control-label(for='password') Password
+                %label(for='password') Password
                 = link_to 'Forgot Password?', new_password_reset_path
               = password_field_tag :password, nil, class: 'form-control', tabindex: 2
             = submit_tag 'Sign In', class: 'btn btn-primary btn-block', tabindex: 3, data: { disable_with: 'Please wait...' }

@@ -9,19 +9,19 @@
               .alert.alert-danger
                 Please correct the errors below to continue.
             .form-group
-              %label.form-control-label(for='user_name') Name
+              %label(for='user_name') Name
               = f.text_field :name, autofocus: true, class: "form-control #{form_error_class(@user, :name)}"
               = model_error_display(@user, :name)
             .form-group
-              %label.form-control-label(for='user_email') Email
+              %label(for='user_email') Email
               = f.email_field :email, class: "form-control #{form_error_class(@user, :email)}"
               = model_error_display(@user, :email)
             .form-group
-              %label.form-control-label(for='user_password') Password
+              %label(for='user_password') Password
               = f.password_field :password, class: "form-control #{form_error_class(@user, :password)}"
               = model_error_display(@user, :password)
             .form-group
-              %label.form-control-label(for='user_password_confirmation') Password Confirmation
+              %label(for='user_password_confirmation') Password Confirmation
               = f.password_field :password_confirmation, class: "form-control #{form_error_class(@user, :password_confirmation)}"
               = model_error_display(@user, :password_confirmation)
             = f.submit 'Save', class: 'btn btn-block btn-primary'
