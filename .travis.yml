@@ -3,7 +3,7 @@ language: ruby
 before_script: "./script/ci/before.sh"
 
 rvm:
-  - 2.4.2
+  - 2.5.0
 
 env:
   - DB=postgres
