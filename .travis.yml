@@ -4,7 +4,7 @@ before_install:
   - gem update --system
   - gem --version
 
-before_script: "./script/ci/befere.sh"
+before_script: "./script/ci/before.sh"
 
 rvm:
   - 2.5.0
