@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.0'
+ruby '2.5.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,10 +8,11 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
+gem 'bootsnap', require: false
 gem 'bootstrap'
 gem 'hamlit'
 gem 'jquery-rails'
-gem 'pg', '< 1.0'
+gem 'pg'
 gem 'rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
