@@ -10,11 +10,10 @@ class AuthenticateUser
   end
 
   def call
-    if @user && @user.authenticate(@params[:password]) && @user.enabled?
+    if authentication_successful?
       @authenticated = true
       @flash = "Welcome back, #{@user.name}!"
     else
-      @authenticated = false
       if @user.nil? || @user.enabled?
         @flash = 'The email or password you entered was not recognized. Please try again!'
       elsif !@user.enabled?
@@ -26,6 +25,12 @@ class AuthenticateUser
 
   def success?
     @authenticated
+  end
+
+  private
+
+  def authentication_successful?
+    @user && @user.authenticate(@params[:password]) && @user.enabled?
   end
 
 end
