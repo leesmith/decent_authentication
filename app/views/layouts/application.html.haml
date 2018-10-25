@@ -12,10 +12,10 @@
   %body{class: "#{controller_name} #{action_name}"}
     .grid-wrapper
       %header.flex-row.justify-content-between.align-center.bg-primary
-        = link_to root_path do
+        = link_to root_path, id: 'home-link' do
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>decent authentication</title><path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path></svg>
         - if authenticated_user
-          %ul.list-inline.mar-b-0
+          %ul.list-inline.mar-b-0#user-nav
             %li= link_to 'Profile', profile_path
             %li= link_to 'Sign out', signout_path, method: :delete, id: 'nav-signout', data: { confirm: 'Are you sure you wish to sign out?' }
       %main.container

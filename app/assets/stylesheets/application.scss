@@ -18,29 +18,38 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
 body {
   background-color: #ffffff;
   color: #212529;
 }
 
 header {
-  padding: .5rem 1.5rem;
-  height: 4rem;
+  height: 60px;
   background-color: #24292e;
-  a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+  #home-link {
+    padding-left: 1.5rem;
+    .icon {
+      color: rgba(255, 255, 255, 0.7);
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
-  :hover {
-    color: #fff;
-    text-decoration: none;
+  #user-nav {
+    padding: 0 1.5rem 0 0;
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      padding: 20px 0 17px 0;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 3px solid #fff;
+      }
+    }
   }
-  .icon {
-    color: rgba(255, 255, 255, 0.7);
-  }
-}
-
-main {
 }
 
 footer {
