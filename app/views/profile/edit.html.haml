@@ -1,31 +1,28 @@
-.container
-  .row.mt-5
-    .col-lg-6.ml-auto.mr-auto
-      .card
-        %h4.card-header.text-center Edit Profile
-        .card-body
-          = form_for @user, url: update_profile_path do |f|
-            - if @user.errors.any?
-              .alert.alert-danger
-                Please correct the errors below to continue.
-            .form-group{class: form_error_class(@user, :name)}
-              %label(for='user_name') Name
-              = f.text_field :name, class: 'form-control', autofocus: true
-              = model_error_display(@user, :name)
-            .form-group{class: form_error_class(@user, :email)}
-              %label(for='user_email') Email
-              = f.email_field :email, class: 'form-control'
-              = model_error_display(@user, :email)
-            .form-group{class: form_error_class(@user, :password)}
-              %label(for='user_password') Password
-              .float-right
-                %small.text-muted Optional
-              = f.password_field :password, class: 'form-control'
-              = model_error_display(@user, :password)
-            .form-group{class: form_error_class(@user, :password_confirmation)}
-              %label(for='user_password_confirmation') Password Confirmation
-              .float-right
-                %small.text-muted Optional
-              = f.password_field :password_confirmation, class: 'form-control'
-              = model_error_display(@user, :password_confirmation)
-            = f.submit 'Save', class: 'btn btn-block btn-primary'
+.row.mar-t-lg
+  .col-lg-6.mar-xy-auto
+    %h3.text-center Edit Profile
+    = form_for @user, url: update_profile_path do |f|
+      - if @user.errors.any?
+        .alert.alert-danger.mar-t-lg
+          Please correct the errors below to continue.
+      .input-field(class="#{form_error_class(@user, :name)}")
+        %label(for='user_name') Name
+        = f.text_field :name, autofocus: true
+        = model_error_display(@user, :name)
+      .input-field(class="#{form_error_class(@user, :email)}")
+        %label(for='user_email') Email
+        = f.email_field :email, class: 'form-control'
+        = model_error_display(@user, :email)
+      .input-field(class="#{form_error_class(@user, :password)}")
+        .flex-row.justify-content-between
+          %label(for='user_password') Password
+          %small.text-muted Optional
+        = f.password_field :password
+        = model_error_display(@user, :password)
+      .input-field(class="#{form_error_class(@user, :password_confirmation)}")
+        .flex-row.justify-content-between
+          %label(for='user_password_confirmation') Password Confirmation
+          %small.text-muted Optional
+        = f.password_field :password_confirmation
+        = model_error_display(@user, :password_confirmation)
+      = f.submit 'Save', class: 'button button-block'

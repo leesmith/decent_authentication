@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def form_error_class(model, attribute)
-    field_with_error?(model, attribute) ? 'is-invalid' : nil
+    field_with_error?(model, attribute) ? 'input-invalid' : nil
   end
 
 end

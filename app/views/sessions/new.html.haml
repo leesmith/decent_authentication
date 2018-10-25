@@ -1,18 +1,15 @@
-.container
-  .row.mt-5
-    .col-lg-4.ml-auto.mr-auto
-      .card
-        %h4.card-header.text-center Sign In
-        .card-body
-          = form_tag [:sessions] do
-            .form-group
-              %label(for="email") Email
-              = email_field_tag :email, params[:email], autofocus: true, class: 'form-control', tabindex: 1
-            .form-group
-              .d-flex.justify-content-between
-                %label(for='password') Password
-                = link_to 'Forgot Password?', new_password_reset_path
-              = password_field_tag :password, nil, class: 'form-control', tabindex: 2
-            = submit_tag 'Sign In', class: 'btn btn-primary btn-block', tabindex: 3, data: { disable_with: 'Please wait...' }
-      %p.my-3
-        = link_to 'Create an account.', register_path
+.row.mar-t-lg
+  .col-lg-4.mar-xy-auto
+    %h3.text-center Sign In
+    = form_tag [:sessions] do
+      .input-field
+        %label(for="email") Email
+        = email_field_tag :email, params[:email], autofocus: true, tabindex: 1
+      .input-field
+        .flex-row.justify-content-between
+          %label(for='password') Password
+          = link_to 'Forgot Password?', new_password_reset_path
+        = password_field_tag :password, nil, tabindex: 2
+      = submit_tag 'Sign In', class: 'button button-block', tabindex: 3, data: { disable_with: 'Please wait...' }
+    %p.mar-y-lg
+      = link_to 'Create an account.', register_path

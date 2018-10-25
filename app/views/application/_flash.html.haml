@@ -1,5 +1,3 @@
 - flash.each do |type, message|
-  %div(class="alert #{bootstrap_class_for(type)} alert-dismissible fade show" role="alert")
-    %button.close{type: 'button', 'aria-label' => "Close", data: { dismiss: 'alert'}}
-      %span(aria-hidden="true") &times;
+  %div(class="mar-t-md alert #{bootstrap_class_for(type)}" role="alert")
     = message.html_safe if message
