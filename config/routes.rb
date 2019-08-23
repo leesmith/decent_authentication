@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   root to: 'home#index'
 
   get 'register' => 'users#new', as: 'register'
@@ -11,4 +13,5 @@ Rails.application.routes.draw do
 
   get 'profile' => 'profile#edit', as: 'profile'
   patch 'profile' => 'profile#update', as: 'update_profile'
+
 end
