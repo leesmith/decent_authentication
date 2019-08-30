@@ -1,17 +1,28 @@
+dist: bionic
+
+env:
+  - DB=postgres
+
+services:
+  - postgresql
+
 language: ruby
+
+cache: bundler
 
 before_install:
   - gem update --system
   - gem --version
   - gem install bundler
+  - sudo service postgresql restart
 
-before_script: "./script/ci/before.sh"
-
-env:
-  - DB=postgres
+before_script:
+  - cp config/database.postgres.yml config/database.yml
+  - psql -c 'create database decent_authentication_test;' -U postgres
+  - bundle exec rake db:schema:load
 
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate spec --trace
+  - RAILS_ENV=test bundle exec rake --trace
 
 notifications:
   email:
