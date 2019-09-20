@@ -35,7 +35,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'codeclimate-test-reporter', require: nil
   gem 'email_spec'
   gem 'launchy'
   gem 'rake'

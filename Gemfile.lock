@@ -84,15 +84,13 @@ GEM
       rake (< 13.0)
     code_analyzer (0.4.8)
       sexp_processor
-    codeclimate-test-reporter (1.0.9)
-      simplecov (<= 0.13)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     daemons (1.3.1)
     debug_inspector (0.0.3)
     diff-lcs (1.3)
-    docile (1.1.5)
+    docile (1.3.2)
     email_spec (2.2.0)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
@@ -237,8 +235,8 @@ GEM
     sexp_processor (4.12.1)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
-    simplecov (0.13.0)
-      docile (~> 1.1.0)
+    simplecov (0.17.1)
+      docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
@@ -281,7 +279,6 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
-  codeclimate-test-reporter
   email_spec
   factory_bot_rails
   hamlit
