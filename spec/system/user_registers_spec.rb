@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'User registration' do
+RSpec.describe 'User registration', type: :feature do
 
   it 'is required before authentication' do
     visit root_path
     expect(page).to have_content('You must sign in to continue')
-    expect(current_path).to eq signin_path
+    expect(page).to have_current_path signin_path
   end
 
   it 'does not allow empty submissions' do
@@ -25,7 +25,7 @@ RSpec.describe 'User registration' do
     fill_in 'user_password_confirmation', with: 'LK234lwe'
     click_button 'Save'
     expect(page).to have_content('Thanks for signing up')
-    expect(current_path).to eq signin_path
+    expect(page).to have_current_path signin_path
   end
 
 end

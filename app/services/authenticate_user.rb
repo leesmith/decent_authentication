@@ -30,7 +30,7 @@ class AuthenticateUser
   private
 
   def authentication_successful?
-    @user && @user.authenticate(@params[:password]) && @user.enabled?
+    @user&.authenticate(@params[:password]) && @user&.enabled?
   end
 
 end

@@ -41,6 +41,6 @@ Run the setup script, start the server, then click 'Create Account' from the sig
 ```
 
 ```
-# run the test suite as well as brakeman, simplecov, and rails_best_practices
+# run the test suite as well as brakeman, simplecov, rails_best_practices, and rubocop
 ./bin/rake analyze
 ```

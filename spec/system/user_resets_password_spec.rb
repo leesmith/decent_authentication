@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User resets password' do
+RSpec.describe 'User resets password', type: :feature do
 
   include ActiveSupport::Testing::TimeHelpers
 
@@ -11,10 +11,8 @@ RSpec.describe 'User resets password' do
       visit new_password_reset_path
       fill_in 'email', with: 'Sam.Jones@example.com'
       click_on 'Send Instructions'
-      expect(unread_emails_for(user.email).size).to eq 1
       open_email(user.email)
       click_first_link_in_email
-      expect(page).to have_content('Change Password')
     end
 
     it 'successfully' do
@@ -50,7 +48,7 @@ RSpec.describe 'User resets password' do
     it 'unsuccessfully with unknown reset token' do
       visit edit_password_reset_path(id: 'abcd')
       expect(page).to have_content 'Invalid request'
-      expect(current_path).to eq new_password_reset_path
+      expect(page).to have_current_path new_password_reset_path
     end
 
     it 'unsuccessfully with expired password token' do
@@ -62,7 +60,7 @@ RSpec.describe 'User resets password' do
         fill_in 'user_password', with: 'newpassword'
         fill_in 'user_password_confirmation', with: 'newpassword'
         click_button 'Save'
-        expect(current_path).to eq new_password_reset_path
+        expect(page).to have_current_path new_password_reset_path
         expect(page).to have_content('This password reset request has expired')
       end
     end

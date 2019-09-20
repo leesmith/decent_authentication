@@ -4,7 +4,7 @@ RSpec.configure do |config|
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
 
-  config.after :each do
+  config.after do
     reset_mailer
   end
 end

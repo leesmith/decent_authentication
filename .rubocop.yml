@@ -1,0 +1,48 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 150
+
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_line_only
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/SymbolArray:
+  MinSize: 3
+
+Style/Documentation:
+  Enabled: false
+
+Style/AndOr:
+  EnforcedStyle: conditionals

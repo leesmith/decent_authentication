@@ -19,7 +19,7 @@ class RecoverPassword
     elsif @params[:user][:password].blank?
       @user.errors.add(:password, "can't be blank")
       @blank_password = true
-    elsif @user.update({ password: @params[:user][:password], password_confirmation: @params[:user][:password_confirmation] })
+    elsif @user.update(password: @params[:user][:password], password_confirmation: @params[:user][:password_confirmation])
       @user.erase_password_reset_fields
       @success = true
       @flash = 'Your password was successfully changed. Please sign in.'
