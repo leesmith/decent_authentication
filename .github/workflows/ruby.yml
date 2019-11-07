@@ -14,10 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - uses: clupprich/ruby-build-action@master
+      id: ruby
       with:
         ruby-version: 2.6.5
+    - name: Print version
+      run: ${{ steps.ruby.outputs.ruby-path }} --version
     - name: Build and test with Rake
       env:
         PGHOST: 127.0.0.1
