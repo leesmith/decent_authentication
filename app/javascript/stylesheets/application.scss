@@ -1,0 +1,42 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+  @apply .font-sans .antialiased .text-gray-800;
+}
+
+body {
+  @apply .bg-gray-200;
+}
+
+a.classic-link {
+  @apply .font-medium .text-blue-700 .transition .ease-in-out .duration-200;
+  &:hover {
+    text-decoration: underline;
+    color: theme('colors.blue.500');
+  }
+}
+
+.card {
+  @apply .p-4 .bg-white .rounded-md .border-gray-500 .shadow-md;
+}
+
+.card-header {
+  @apply .font-semibold .text-lg;
+}
+
+.btn {
+  @apply .text-white .rounded .px-4 .py-2 .font-medium .transition .ease-in-out .duration-200;
+}
+
+.btn-blue {
+  background-color: theme('colors.blue.500');
+  &:hover {
+    background-color: theme('colors.blue.700');
+  }
+}
+
+.text-muted {
+  @apply .text-gray-600;
+}

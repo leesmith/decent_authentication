@@ -10,13 +10,14 @@ gem 'hamlit'
 gem 'pg'
 gem 'rails'
 gem 'sassc-rails'
-gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'awesome_print'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'puma'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-performance'
@@ -30,7 +31,6 @@ group :development do
   gem 'brakeman', require: false
   gem 'rails_best_practices'
   gem 'spring'
-  gem 'thin'
 end
 
 group :test do
