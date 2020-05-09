@@ -1,4 +1,4 @@
-let environment = {
+module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
@@ -12,19 +12,3 @@ let environment = {
     })
   ]
 }
-
-// Run PurgeCSS in production or staging, not in development
-if (!(process.env.RAILS_ENV === 'development')) {
-  environment.plugins.push(
-    require('@fullhuman/postcss-purgecss')({
-      content: [
-      './app/**/*.html.haml',
-      './app/helpers/**/*.rb',
-      './app/javascript/**/*.js',
-    ],
-      defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-    })
-  )
-}
-
-module.exports = environment
