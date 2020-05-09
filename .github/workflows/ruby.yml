@@ -20,15 +20,21 @@ jobs:
       id: ruby
       with:
         ruby-version: 2.6.6
+    - name: Install dependencies
+      run: |
+        sudo apt-get -yqq install libpq-dev
+        gem install bundler
+    - name: Bundle install
+      run: bundle install --jobs 4 --retry 3
+    - name: Webpack compilation
+      run: NODE_ENV=test bundle exec rails webpacker:compile
+    - name: Create database config
+      run: cp config/database.postgres.yml config/database.yml
     - name: Build and test with Rake
       env:
         PGHOST: 127.0.0.1
         PGUSER: postgres
         RAILS_ENV: test
       run: |
-        sudo apt-get -yqq install libpq-dev
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        cp config/database.postgres.yml config/database.yml
         bundle exec rake db:test:prepare
         bundle exec rake spec
