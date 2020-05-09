@@ -4,10 +4,19 @@
 
 html {
   @apply .font-sans .antialiased .text-gray-800;
+  height: 100%;
 }
 
 body {
-  @apply .bg-gray-200;
+  @apply .bg-white;
+  height: 100%;
+}
+
+.grid-wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }
 
 a.classic-link {
