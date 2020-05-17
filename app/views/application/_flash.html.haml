@@ -1,6 +1,6 @@
 - flash.each do |type, message|
   %div(class="alert #{alert_class_for(type)}" role="alert")
     .flex
-      .ml-2.flex-1
+      .ml-1.flex-1
         %p.text-sm.leading-5
           = message.html_safe if message

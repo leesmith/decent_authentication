@@ -14,7 +14,6 @@
           .mt-1.rounded-md.shadow-sm
             = password_field_tag :password, nil, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:leading-5'
         .mt-6
-          %span.block.w-full.rounded-md.shadow-sm
-            = submit_tag 'Sign In', class: 'w-full btn btn-blue', data: { disable_with: 'Please wait...' }
+          = submit_tag 'Sign In', class: 'w-full btn btn-blue', data: { disable_with: 'Please wait...' }
       .pt-5.text-center
         = link_to 'Create an account', register_path
