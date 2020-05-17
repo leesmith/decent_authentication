@@ -19,33 +19,65 @@ body {
   grid-template-columns: 100%;
 }
 
-a.classic-link {
-  @apply .font-medium .text-blue-700 .transition .ease-in-out .duration-200;
+a {
+  @apply .font-medium .text-blue-600 .transition .ease-in-out .duration-150;
   &:hover {
-    text-decoration: underline;
-    color: theme('colors.blue.500');
+    @apply .text-blue-500 .underline;
+  }
+  &:focus {
+    @apply .outline-none .underline;
   }
 }
 
-.card {
-  @apply .p-4 .bg-white .rounded-md .border-gray-500 .shadow-md;
-}
-
-.card-header {
-  @apply .font-semibold .text-lg;
+label {
+  @apply .block .font-medium .leading-5 .text-gray-700;
 }
 
 .btn {
-  @apply .text-white .rounded .px-4 .py-2 .font-medium .transition .ease-in-out .duration-200;
+  @apply .flex .justify-center .text-white .border .border-transparent .rounded .px-4 .py-2 .font-medium .transition .ease-in-out .duration-150;
 }
 
 .btn-blue {
-  background-color: theme('colors.blue.500');
+  @apply .bg-blue-600;
   &:hover {
-    background-color: theme('colors.blue.700');
+    @apply .bg-blue-500;
+  }
+  &:focus {
+    @apply .border-blue-700 .outline-none .shadow-outline-blue;
+  }
+  &:active {
+    @apply .bg-blue-700;
   }
 }
 
 .text-muted {
   @apply .text-gray-600;
+}
+
+.alert {
+  @apply .rounded-md .mt-4 .p-4;
+}
+
+.alert-success {
+  @apply .bg-green-50 .text-green-700;
+}
+
+.alert-error {
+  @apply .bg-red-50 .text-red-700;
+}
+
+.alert-warning {
+  @apply .bg-yellow-50 .text-yellow-700;
+}
+
+.alert-info {
+  @apply .bg-blue-50 .text-blue-700;
+}
+
+.github-icon:hover {
+  color: #171515;
+}
+
+.twitter-icon:hover {
+  color: #1da1f3;
 }

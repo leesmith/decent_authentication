@@ -1,19 +1,20 @@
-%div(class="justify-center py-12 sm:px-6 lg:px-8")
-  %div(class="mt-8 sm:mx-auto sm:w-full sm:max-w-md")
-    %div(class="py-8 px-4 border sm:rounded-lg sm:px-10")
+%div(class="justify-center py-5 sm:px-6 lg:px-8")
+  %div(class="mt-3 sm:mx-auto sm:w-full sm:max-w-md")
+    %div(class="py-8 px-4 sm:px-10")
+      %h1.text-center.text-3xl.font-medium.mb-8.tracking-tight Sign In
       = form_tag [:sessions] do
         %div
-          %label(for="email" class="block font-medium leading-5 text-gray-700")Email address
+          %label(for="email") Email
           .mt-1.rounded-md.shadow-sm
             = email_field_tag :email, params[:email], class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:leading-5'
         .mt-6
           %div.flex.items-center.justify-between
-            %label(for="password" class="block font-medium leading-5 text-gray-700") Password
-            = link_to 'Forgot Password?', new_password_reset_path, class: 'text-sm font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150'
+            %label(for="password") Password
+            = link_to 'Forgot Password?', new_password_reset_path, class: 'text-sm'
           .mt-1.rounded-md.shadow-sm
             = password_field_tag :password, nil, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:leading-5'
         .mt-6
           %span.block.w-full.rounded-md.shadow-sm
-            = submit_tag 'Sign In', data: { disable_with: 'Please wait...' }, class: 'w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out'
+            = submit_tag 'Sign In', class: 'w-full btn btn-blue', data: { disable_with: 'Please wait...' }
       .pt-5.text-center
-        = link_to 'Create an account.', register_path, class: 'font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150'
+        = link_to 'Create an account', register_path

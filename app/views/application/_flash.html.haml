@@ -1,3 +1,6 @@
 - flash.each do |type, message|
-  %div(class="mar-t-md alert #{bootstrap_class_for(type)}" role="alert")
-    = message.html_safe if message
+  %div(class="alert #{alert_class_for(type)}" role="alert")
+    .flex
+      .ml-2.flex-1
+        %p.text-sm.leading-5
+          = message.html_safe if message
