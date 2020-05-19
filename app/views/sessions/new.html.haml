@@ -8,7 +8,7 @@
           .mt-1.rounded-md.shadow-sm
             = email_field_tag :email, params[:email], class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:leading-5'
         .mt-6
-          %div.flex.items-center.justify-between
+          .flex.items-center.justify-between
             %label(for="password") Password
             = link_to 'Forgot Password?', new_password_reset_path, class: 'text-sm'
           .mt-1.rounded-md.shadow-sm
