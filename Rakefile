@@ -1,7 +1,7 @@
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-if Gem.loaded_specs.has_key?('rspec-rails')
+begin
   require_relative 'config/application'
   require 'rubocop/rake_task'
 
@@ -12,4 +12,5 @@ if Gem.loaded_specs.has_key?('rspec-rails')
     task.requires << 'rubocop-rails'
     task.requires << 'rubocop-rspec'
   end
+rescue LoadError
 end
