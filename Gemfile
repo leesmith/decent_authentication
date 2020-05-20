@@ -10,6 +10,7 @@ gem 'hamlit'
 gem 'pg'
 gem 'puma'
 gem 'rails'
+gem 'rake'
 gem 'sassc-rails'
 gem 'webpacker', '~> 4.0'
 
@@ -37,7 +38,6 @@ group :test do
   gem 'capybara'
   gem 'email_spec'
   gem 'launchy'
-  gem 'rake'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
