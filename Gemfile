@@ -8,6 +8,7 @@ gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'hamlit'
 gem 'pg'
+gem 'puma'
 gem 'rails'
 gem 'sassc-rails'
 gem 'webpacker', '~> 4.0'
@@ -17,7 +18,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'puma'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-performance'
