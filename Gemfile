@@ -11,7 +11,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'sassc-rails'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker'
 
 group :development, :test do
   gem 'awesome_print'
