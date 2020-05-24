@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_authentication
-    unless authenticated_user
-      session[:intended_destination] = params
-      redirect_to signin_url, error: 'You must sign in to continue!'
-    end
+    return if authenticated_user
+
+    session[:intended_destination] = params
+    redirect_to signin_url, error: 'You must sign in to continue!'
   end
 
 end

@@ -1,0 +1,20 @@
+{
+  "name": "decent-authentication",
+  "version": "1.0.0",
+  "author": "Lee Smith",
+  "license": "ISC",
+  "engines": {
+    "node": "14.2.0",
+    "yarn": "1.22.4"
+  },
+  "dependencies": {
+    "@rails/ujs": "^6.0.3",
+    "@rails/webpacker": "^5.1.1",
+    "@tailwindcss/ui": "^0.3.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

@@ -1,12 +1,12 @@
 module ApplicationHelper
 
-  def bootstrap_class_for(flash_type)
-    { success: 'alert-success', error: 'alert-danger', warning: 'alert-warning', info: 'alert-info' }[flash_type.to_sym] || flash_type.to_s
+  def alert_class_for(flash_type)
+    { success: 'alert-success', error: 'alert-error', warning: 'alert-warning', info: 'alert-info' }[flash_type.to_sym] || flash_type.to_s
   end
 
   def model_error_display(model, attribute)
     if field_with_error?(model, attribute)
-      content_tag(:small, model.errors[attribute].first.to_s, class: 'text-danger')
+      content_tag(:small, model.errors[attribute].first.to_s, class: 'text-red-700')
     end
   end
 

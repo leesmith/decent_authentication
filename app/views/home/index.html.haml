@@ -1,9 +1,12 @@
-.row.mar-t-lg
-  .col.mar-xy-auto
-    %h1 Welcome!
+%section(class="mt-6 px-6 sm:px-0")
+  %h1.text-3xl.font-semibold Welcome!
 
-    %p You have successfully authenticated!
+  %p.text-xl.font-medium You have successfully authenticated!
 
-    %p
-      Decent Authentication is a sample application that implements authentication in Rails without
-      the use of a third-party generator or engine.
+  %p.mt-6.font-medium
+    Decent Authentication is a sample application that implements authentication in Rails without
+    the use of a third-party generator or engine.
+
+  %p.mt-6
+    Make any changes to your
+    = link_to 'profile.', profile_path

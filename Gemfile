@@ -8,9 +8,11 @@ gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'hamlit'
 gem 'pg'
+gem 'puma'
 gem 'rails'
+gem 'rake'
 gem 'sassc-rails'
-gem 'uglifier', '>= 1.3.0'
+gem 'webpacker'
 
 group :development, :test do
   gem 'awesome_print'
@@ -30,14 +32,12 @@ group :development do
   gem 'brakeman', require: false
   gem 'rails_best_practices'
   gem 'spring'
-  gem 'thin'
 end
 
 group :test do
   gem 'capybara'
   gem 'email_spec'
   gem 'launchy'
-  gem 'rake'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
