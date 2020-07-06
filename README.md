@@ -13,15 +13,15 @@ Features:
 
 Secure defaults:
 
-- Passwords must be 8 alphanumeric characters
-- Password reset requests expire after 2 hours
-- Session cookies expire after 30 minutes
+- Passwords must be [8 alphanumeric characters](https://github.com/leesmith/decent_authentication/blob/master/app/models/user.rb)
+- Password reset requests [expire after 2 hours](https://github.com/leesmith/decent_authentication/blob/master/app/services/recover_password.rb)
+- Session cookies [expire after 30 minutes](https://github.com/leesmith/decent_authentication/blob/master/config/initializers/session_store.rb)
 
 [Demo](https://decent-authentication.herokuapp.com/sign-in)
 
 ## Dependencies
 
-* Ruby 2.6
+* Ruby 2.7
 * PostgreSQL
 
 ## Getting Started
