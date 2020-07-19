@@ -11,9 +11,7 @@ class SessionsController < ApplicationController
     authentication_attempt = AuthenticateUser.new(user, params).call
     if authentication_attempt.success?
       intended_url = session[:intended_destination]
-      reset_session
-      session[:auth_token] = user.auth_token
-      user.touch(:last_sign_in_at)
+      setup_session(user)
       flash[:success] = authentication_attempt.flash
       redirect_to intended_url.presence || root_url
     else
@@ -25,6 +23,14 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     redirect_to signin_url, success: 'You have successfully signed out!'
+  end
+
+  private
+
+  def setup_session(user)
+    reset_session
+    session[:auth_token] = user.auth_token
+    user.touch(:last_sign_in_at)
   end
 
 end
