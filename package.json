@@ -10,7 +10,7 @@
   "dependencies": {
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.1.1",
-    "@tailwindcss/ui": "^0.3.0",
+    "@tailwindcss/ui": "^0.4.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
