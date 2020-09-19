@@ -13,4 +13,8 @@ module.exports = {
     require('@tailwindcss/ui'),
     require('@tailwindcss/custom-forms')
   ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true
+  }
 }
