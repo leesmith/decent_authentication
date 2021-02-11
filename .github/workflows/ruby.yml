@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install Ruby version specified in `.ruby-version`
         uses: eregon/use-ruby-action@master
+        bundler-cache: true
       - name: Install dependencies
         run: |
           sudo apt-get -y install libpq-dev
