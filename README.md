@@ -19,11 +19,6 @@ Secure defaults:
 
 [Demo](https://decent-authentication.herokuapp.com/sign-in)
 
-## Dependencies
-
-* Ruby 2.7
-* PostgreSQL
-
 ## Getting Started
 
 Run the setup script, start the server, then click 'Create Account' from the sign in screen.
