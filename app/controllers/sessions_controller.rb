@@ -7,11 +7,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email].downcase)
-    authentication_attempt = AuthenticateUser.new(user, params).call
+    authentication_attempt = AuthenticateUser.new(params).call
     if authentication_attempt.success?
       intended_url = session[:intended_destination]
-      setup_session(user)
+      setup_session(authentication_attempt.user)
       flash[:success] = authentication_attempt.flash
       redirect_to intended_url.presence || root_url
     else

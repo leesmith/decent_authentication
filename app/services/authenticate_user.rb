@@ -1,9 +1,8 @@
 class AuthenticateUser
 
-  attr_reader :flash
+  attr_reader :flash, :user
 
-  def initialize(user, params)
-    @user = user
+  def initialize(params)
     @params = params
     @authenticated = false
     @flash = nil
@@ -30,7 +29,8 @@ class AuthenticateUser
   private
 
   def authentication_successful?
-    @user&.authenticate(@params[:password]) && @user&.enabled?
+    @user = User.find_by(email: @params[:email].downcase)
+    @user&.authenticate(@params[:password]) && @user.enabled?
   end
 
 end
