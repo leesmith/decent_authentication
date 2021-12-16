@@ -31,7 +31,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'brakeman', require: false
   gem 'rails_best_practices'
-  gem 'spring'
 end
 
 group :test do
