@@ -4,7 +4,7 @@
   "author": "Lee Smith",
   "license": "ISC",
   "engines": {
-    "node": "^17.0.0",
+    "node": ">=16",
     "yarn": "^1.22.4"
   },
   "dependencies": {
