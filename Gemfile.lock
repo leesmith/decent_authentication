@@ -100,7 +100,7 @@ GEM
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
     docile (1.4.0)
-    email_spec (2.2.1)
+    email_spec (2.2.0)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.7)
@@ -310,7 +310,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
-  email_spec
+  email_spec (= 2.2.0)
   factory_bot_rails
   hamlit
   launchy
@@ -336,4 +336,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.20
+   2.3.24

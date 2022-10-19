@@ -35,7 +35,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'email_spec'
+  gem 'email_spec', '2.2.0'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
