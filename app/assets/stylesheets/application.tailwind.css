@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+@layer components {
+  /* a { */
+  /*   @apply .font-medium .text-blue-600 .transition .ease-in-out .duration-150; */
+  /*   &:hover { */
+  /*     @apply .text-blue-500 .underline; */
+  /*   } */
+  /*   &:focus { */
+  /*     @apply .outline-none .underline; */
+  /*   } */
+  /* } */
+
+  /* ul#user-nav { */
+  /*   @apply .flex; */
+  /*   li { */
+  /*     @apply .mr-6; */
+  /*     a { */
+  /*       @apply .text-blue-200; */
+  /*       &:hover { */
+  /*         @apply .text-white .no-underline; */
+  /*       } */
+  /*     } */
+  /*   } */
+  /* } */
+
+  /* label { */
+  /*   @apply .block .font-medium .leading-5 .text-gray-700; */
+  /* } */
+
+  /* .btn { */
+  /*   @apply .flex .justify-center .text-white .border .border-transparent .rounded .px-4 .py-2 .font-medium .transition .ease-in-out .duration-150; */
+  /* } */
+
+  /* .btn-blue { */
+  /*   @apply .bg-blue-600; */
+  /*   &:hover { */
+  /*     @apply .bg-blue-500; */
+  /*   } */
+  /*   &:focus { */
+  /*     @apply .border-blue-700 .outline-none .shadow-outline-blue; */
+  /*   } */
+  /*   &:active { */
+  /*     @apply .bg-blue-700; */
+  /*   } */
+  /* } */
+
+  /* .text-muted { */
+  /*   @apply .text-gray-600; */
+  /* } */
+
+  /* .alert { */
+  /*   @apply .rounded-md .mt-4 .p-4; */
+  /* } */
+
+  /* .alert-success { */
+  /*   @apply .bg-green-50 .text-green-700; */
+  /* } */
+
+  /* .alert-error { */
+  /*   @apply .bg-red-50 .text-red-700; */
+  /* } */
+
+  /* .alert-warning { */
+  /*   @apply .bg-yellow-50 .text-yellow-700; */
+  /* } */
+
+  /* .alert-info { */
+  /*   @apply .bg-blue-50 .text-blue-700; */
+  /* } */
+
+}

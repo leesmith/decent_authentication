@@ -4,11 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore bundler config.
 /.bundle
-/brakeman.html
-/rails_best_practices.html
-/config/database.yml
-/coverage
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -16,10 +13,29 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
 /public/assets
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Ignore database config
+/config/database.yml
+
+/brakeman.html
+/coverage
+/rails_best_practices.html
