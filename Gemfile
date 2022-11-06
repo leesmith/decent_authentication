@@ -19,6 +19,7 @@ gem 'turbo-rails'
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'bundler-audit'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'

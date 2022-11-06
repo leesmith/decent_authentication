@@ -1,9 +1,26 @@
-name: Build
-
+name: CI/CD
 on: [push]
 
 jobs:
-  build:
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run security checks
+        run: |
+          bin/bundler-audit --update
+
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
 
     services:
@@ -23,9 +40,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Install dependencies
-        run: sudo apt-get -y install libpq-dev
-
       - name: Create database config
         run: cp config/database.postgres.yml config/database.yml
 
@@ -35,5 +49,5 @@ jobs:
           PGUSER: postgres
           RAILS_ENV: test
         run: |
-          bundle exec rake db:test:prepare
-          bundle exec rake spec
+          bin/rails db:test:prepare
+          bin/rspec
