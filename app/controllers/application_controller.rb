@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
     return if authenticated_user
 
     session[:intended_destination] = params
-    redirect_to signin_url, error: 'You must sign in to continue!'
+    redirect_to signin_url, error: "You must sign in to continue!"
   end
-
 end

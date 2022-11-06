@@ -1,5 +1,5 @@
-require 'capybara/rails'
-require 'capybara/rspec'
+require "capybara/rails"
+require "capybara/rspec"
 
 RSpec.configure do |config|
   config.before(:each, type: :system) do

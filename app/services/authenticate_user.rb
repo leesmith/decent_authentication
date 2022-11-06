@@ -1,5 +1,4 @@
 class AuthenticateUser
-
   attr_reader :flash, :user
 
   def initialize(params)
@@ -12,12 +11,10 @@ class AuthenticateUser
     if authentication_successful?
       @authenticated = true
       @flash = "Welcome back, #{@user.name}!"
-    else
-      if @user.nil? || @user.enabled?
-        @flash = 'The email or password you entered was not recognized. Please try again!'
-      elsif !@user.enabled?
-        @flash = 'Your account has been disabled!'
-      end
+    elsif @user.nil? || @user.enabled?
+      @flash = "The email or password you entered was not recognized. Please try again!"
+    elsif !@user.enabled?
+      @flash = "Your account has been disabled!"
     end
     self
   end
@@ -30,7 +27,6 @@ class AuthenticateUser
 
   def authentication_successful?
     @user = User.find_by(email: @params[:email].downcase)
-    @user&.authenticate(@params[:password]) && @user.enabled?
+    @user&.authenticate(@params[:password]) && @user&.enabled?
   end
-
 end

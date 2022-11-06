@@ -1,7 +1,7 @@
-desc 'Run static analysis'
+desc "Run static analysis"
 task :analyze do
-  Rake::Task['spec'].invoke
-  Rake::Task['brakeman'].invoke
-  Rake::Task['rails_best_practices'].invoke
-  Rake::Task['rubocop'].invoke
+  Rake::Task["spec"].invoke
+  Rake::Task["brakeman"].invoke
+  Rake::Task["rails_best_practices"].invoke
+  Rake::Task["rubocop"].invoke
 end

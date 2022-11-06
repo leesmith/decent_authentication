@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to signin_url, success: 'You have successfully signed out!'
+    redirect_to signin_url, success: "You have successfully signed out!"
   end
 
   private
@@ -31,5 +31,4 @@ class SessionsController < ApplicationController
     session[:auth_token] = user.auth_token
     user.touch(:last_sign_in_at)
   end
-
 end

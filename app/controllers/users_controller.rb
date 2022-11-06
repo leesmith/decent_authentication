@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.enabled = true
     if @user.save
-      redirect_to signin_url, success: 'Thanks for signing up! You may now sign in.'
+      redirect_to signin_url, success: "Thanks for signing up! You may now sign in."
     else
       render :new
     end
@@ -25,5 +25,4 @@ class UsersController < ApplicationController
       :password_confirmation
     )
   end
-
 end

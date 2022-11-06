@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'User updates profile', type: :feature do
-
+RSpec.describe "User updates profile", type: :feature do
   let!(:user) { create(:user) }
 
   before do
@@ -9,37 +8,36 @@ RSpec.describe 'User updates profile', type: :feature do
     visit profile_path
   end
 
-  it 'successfully' do
-    fill_in 'user_name', with: 'Sam Adams III'
-    fill_in 'user_email', with: 'SamAdamsIII@example.com'
-    fill_in 'user_password', with: '1qaz2wsx3edc'
-    fill_in 'user_password_confirmation', with: '1qaz2wsx3edc'
-    click_button 'Save'
+  it "successfully" do
+    fill_in "user_name", with: "Sam Adams III"
+    fill_in "user_email", with: "SamAdamsIII@example.com"
+    fill_in "user_password", with: "1qaz2wsx3edc"
+    fill_in "user_password_confirmation", with: "1qaz2wsx3edc"
+    click_button "Save"
     user.reload
     expect(page).to have_current_path profile_path
-    expect(page).to have_text 'Your profile was successfully updated'
-    expect(user.name).to eq 'Sam Adams III'
-    expect(user.email).to eq 'samadamsiii@example.com'
+    expect(page).to have_text "Your profile was successfully updated"
+    expect(user.name).to eq "Sam Adams III"
+    expect(user.email).to eq "samadamsiii@example.com"
   end
 
-  it 'unsuccessfully' do
-    fill_in 'user_email', with: ''
-    click_button 'Save'
+  it "unsuccessfully" do
+    fill_in "user_email", with: ""
+    click_button "Save"
     user.reload
     expect(page).to have_current_path profile_path
     expect(user.email).not_to be_nil
-    expect(page).to have_form_field_error_for('user_email')
+    expect(page).to have_form_field_error_for("user_email")
   end
 
-  it 'unsuccessfully with password update' do
-    fill_in 'user_password', with: 'password'
-    click_button 'Save'
+  it "unsuccessfully with password update" do
+    fill_in "user_password", with: "password"
+    click_button "Save"
     user.reload
     expect(page).to have_current_path profile_path
-    expect(page).to have_text 'must be alphanumeric'
-    expect(page).to have_form_field_error_for('user_password')
+    expect(page).to have_text "must be alphanumeric"
+    expect(page).to have_form_field_error_for("user_password")
     expect(page).to have_text "doesn't match Password"
-    expect(page).to have_form_field_error_for('user_password_confirmation')
+    expect(page).to have_form_field_error_for("user_password_confirmation")
   end
-
 end

@@ -1,5 +1,4 @@
 class ProfileController < ApplicationController
-
   def edit
     @user = authenticated_user
   end
@@ -7,7 +6,7 @@ class ProfileController < ApplicationController
   def update
     @user = authenticated_user
     if @user.update(user_params)
-      redirect_to profile_url, success: 'Your profile was successfully updated!'
+      redirect_to profile_url, success: "Your profile was successfully updated!"
     else
       render :edit
     end
@@ -23,5 +22,4 @@ class ProfileController < ApplicationController
       :password_confirmation
     )
   end
-
 end

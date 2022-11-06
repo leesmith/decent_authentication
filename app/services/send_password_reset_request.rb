@@ -1,5 +1,4 @@
 class SendPasswordResetRequest
-
   def initialize(user)
     @user = user
   end
@@ -12,5 +11,4 @@ class SendPasswordResetRequest
     # deliver the email
     UserMailer.password_reset(@user).deliver_now
   end
-
 end

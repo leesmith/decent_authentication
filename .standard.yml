@@ -1,0 +1,12 @@
+fix: false              # default: false
+parallel: false         # default: false
+default_ignores: true   # default: true
+
+ignore:                 # default: []
+  - 'db/schema.rb'
+  - 'vendor/**/*'
+  - 'test/**/*':
+    - Layout/AlignHash
+  - 'spec/spec_helper.rb'
+  - 'spec/rails_helper.rb'
+  - 'config/**/*'

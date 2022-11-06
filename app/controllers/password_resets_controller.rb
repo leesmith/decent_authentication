@@ -1,20 +1,21 @@
 class PasswordResetsController < ApplicationController
   skip_before_action :require_authentication
 
-  def new; end
+  def new
+  end
 
   def create
-    redirect_to new_password_reset_url, error: 'You must provide an email address!' and return if params[:email].blank?
+    redirect_to new_password_reset_url, error: "You must provide an email address!" and return if params[:email].blank?
     user = User.find_by(email: params[:email].downcase)
     SendPasswordResetRequest.new(user).call if user
-    redirect_to signin_url, success: 'An email was just sent to you with password reset instructions.' and return
+    redirect_to signin_url, success: "An email was just sent to you with password reset instructions." and return
   end
 
   def edit
     @user = User.find_by(password_reset_token: params[:id])
 
     if @user.blank?
-      msg = 'Invalid request! Please use the form below to request password reset instructions again.'
+      msg = "Invalid request! Please use the form below to request password reset instructions again."
       redirect_to new_password_reset_url, error: msg and return
     end
   end
@@ -34,5 +35,4 @@ class PasswordResetsController < ApplicationController
       render :edit
     end
   end
-
 end
