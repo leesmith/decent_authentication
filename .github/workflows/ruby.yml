@@ -8,23 +8,27 @@ jobs:
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:14
         ports: ['5432:5432']
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        options: --health-cmd pg_isready --health-interval 10ms --health-timeout 500ms --health-retries 5
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install Ruby as specified in `.ruby-version`
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - name: Install dependencies
         run: sudo apt-get -y install libpq-dev
+
       - name: Create database config
         run: cp config/database.postgres.yml config/database.yml
+
       - name: Prepare DB and run test suite
         env:
           PGHOST: 127.0.0.1
