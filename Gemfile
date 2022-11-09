@@ -5,7 +5,7 @@ ruby File.read(".ruby-version").strip
 
 gem "bcrypt"
 gem "bootsnap", require: false
-gem "hamlit"
+gem "haml"
 gem "importmap-rails"
 gem "pg"
 gem "puma"
