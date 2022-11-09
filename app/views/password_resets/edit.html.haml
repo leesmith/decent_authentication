@@ -6,7 +6,7 @@
         .flex
           .ml-1.flex-1
             %p.leading-5 Passwords must be at least <strong>8 characters</strong> long and contain numbers and letters.
-      = form_for @user, url: password_reset_path(params[:id]) do |f|
+      = form_with model: @user, url: password_reset_path(params[:id]), data: {turbo: false} do |f|
         .mt-6
           %label(for='user_password') New Password
           .mt-1.rounded-md.shadow-sm
