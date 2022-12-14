@@ -2,26 +2,29 @@ name: CI/CD
 on: [push]
 
 jobs:
-  linters:
-    name: Linters
+  static_analysis:
+    name: Static analysis
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Ruby and install gems
+      - name: Setup ruby and gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - name: Run linters
+      - name: Standard code linter
         run: |
           bin/standardrb --format progress
 
-      - name: Run security checks
+      - name: Bundler audit
         run: |
           bin/bundler-audit --update
+
+      - name: Brakeman
+        run: |
           bin/brakeman -q
 
   tests:
@@ -40,7 +43,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Ruby as specified in `.ruby-version`
+      - name: Install ruby and gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
